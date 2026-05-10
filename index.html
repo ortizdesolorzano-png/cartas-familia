@@ -318,7 +318,7 @@ Devuelve exactamente este JSON:
 ${score===5?'Carta máxima: hazlo legendario y épico.':score>=3?'Carta buena: personaje notable.':'Carta básica: personaje común.'}`;
 
   try{
-    const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDEVPZzyN5IRSAzmm1Oe7MRhofqndkjA70',{
+    const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDEVPZzyN5IRSAzmm1Oe7MRhofqndkjA70',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
