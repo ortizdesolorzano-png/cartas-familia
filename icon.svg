@@ -1,50 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 <rect width="512" height="512" rx="100" fill="#0d1b3e"/>
 <rect width="512" height="512" rx="100" fill="none" stroke="#c9a227" stroke-width="5"/>
-<rect x="4" y="4" width="504" height="180" rx="96" fill="rgba(201,162,39,0.06)"/>
+<rect x="4" y="4" width="504" height="160" rx="96" fill="rgba(201,162,39,0.06)"/>
 <line x1="60" y1="72" x2="452" y2="72" stroke="#c9a227" stroke-width="1" opacity="0.3"/>
-<text x="256" y="58" text-anchor="middle" font-size="58" fill="white" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="700" letter-spacing="6">FAMILY</text>
-<circle cx="80" cy="110" r="5" fill="#ffd84a" opacity="0.7"/>
-<circle cx="435" cy="100" r="4" fill="#ffd84a" opacity="0.5"/>
-<circle cx="460" cy="140" r="3" fill="#fff" opacity="0.3"/>
-<circle cx="55" cy="155" r="3" fill="#fff" opacity="0.25"/>
+<text x="256" y="58" text-anchor="middle" font-size="52" fill="white" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="700" letter-spacing="3">ORTIZ NUEDA</text>
+<circle cx="80" cy="105" r="5" fill="#ffd84a" opacity="0.7"/>
+<circle cx="435" cy="98" r="4" fill="#ffd84a" opacity="0.5"/>
+<circle cx="460" cy="138" r="3" fill="#fff" opacity="0.3"/>
+<circle cx="55" cy="150" r="3" fill="#fff" opacity="0.25"/>
 <g transform="translate(256,148)">
   <polygon points="0,-26 5.8,-9 22,-9 9.2,2.6 14,19.6 0,11 -14,19.6 -9.2,2.6 -22,-9 -5.8,-9" fill="#ffd84a"/>
   <polygon points="0,-16 3.6,-5.5 13.5,-5.5 5.7,1.6 8.8,12 0,7 -8.8,12 -5.7,1.6 -13.5,-5.5 -3.6,-5.5" fill="rgba(255,255,255,0.45)"/>
 </g>
 <!-- CARD ORO -->
 <g transform="translate(60,188)">
-  <rect width="168" height="210" rx="18" fill="#120e00" stroke="#c9a227" stroke-width="3.5"/>
-  <rect x="3" y="3" width="162" height="68" rx="15" fill="rgba(255,210,0,0.1)"/>
-  <circle cx="84" cy="78" r="34" fill="#22180a"/>
-  <circle cx="84" cy="78" r="24" fill="#c9a227" opacity="0.88"/>
-  <circle cx="84" cy="78" r="34" fill="none" stroke="#ffd84a" stroke-width="1.5" opacity="0.4"/>
-  <ellipse cx="76" cy="66" rx="8" ry="5" fill="rgba(255,255,255,0.35)"/>
-  <rect x="14" y="124" width="140" height="4" rx="2" fill="#c9a227" opacity="0.35"/>
-  <rect x="14" y="134" width="100" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
-  <rect x="14" y="145" width="120" height="6" rx="3" fill="rgba(255,255,255,0.09)"/>
-  <rect x="14" y="156" width="80" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
-  <rect x="14" y="176" width="140" height="24" rx="7" fill="rgba(201,162,39,0.22)" stroke="#ffd84a" stroke-width="1.5"/>
-  <text x="84" y="193" text-anchor="middle" font-size="13" fill="#ffe566" font-family="-apple-system,sans-serif" font-weight="700" letter-spacing="1.5">ORO</text>
+  <rect width="168" height="205" rx="18" fill="#120e00" stroke="#c9a227" stroke-width="3.5"/>
+  <rect x="3" y="3" width="162" height="62" rx="15" fill="rgba(255,210,0,0.1)"/>
+  <circle cx="84" cy="74" r="30" fill="#22180a"/>
+  <circle cx="84" cy="74" r="21" fill="#c9a227" opacity="0.88"/>
+  <circle cx="84" cy="74" r="30" fill="none" stroke="#ffd84a" stroke-width="1.5" opacity="0.4"/>
+  <ellipse cx="76" cy="63" rx="7" ry="5" fill="rgba(255,255,255,0.35)"/>
+  <rect x="14" y="116" width="140" height="4" rx="2" fill="#c9a227" opacity="0.35"/>
+  <rect x="14" y="125" width="100" height="5" rx="2.5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="14" y="135" width="120" height="5" rx="2.5" fill="rgba(255,255,255,0.09)"/>
+  <rect x="14" y="145" width="80" height="5" rx="2.5" fill="rgba(255,255,255,0.07)"/>
+  <rect x="14" y="166" width="140" height="24" rx="7" fill="rgba(201,162,39,0.22)" stroke="#ffd84a" stroke-width="1.5"/>
+  <text x="84" y="183" text-anchor="middle" font-size="13" fill="#ffe566" font-family="-apple-system,sans-serif" font-weight="700" letter-spacing="1.5">ORO</text>
 </g>
 <!-- CARD PLATINO -->
 <g transform="translate(284,188)">
-  <rect width="168" height="210" rx="18" fill="#1a1f2e" stroke="#b0c4d8" stroke-width="3.5"/>
-  <rect x="3" y="3" width="162" height="68" rx="15" fill="rgba(220,235,255,0.08)"/>
-  <line x1="30" y1="0" x2="130" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="30"/>
-  <circle cx="84" cy="78" r="34" fill="#141a26"/>
-  <circle cx="84" cy="78" r="30" fill="none" stroke="#9ab0c8" stroke-width="4" opacity="0.5"/>
-  <circle cx="84" cy="78" r="22" fill="#b8cede" opacity="0.9"/>
-  <circle cx="84" cy="78" r="15" fill="#d8eaf5" opacity="0.95"/>
-  <circle cx="84" cy="78" r="7" fill="white" opacity="0.95"/>
-  <ellipse cx="76" cy="66" rx="6" ry="4" fill="white" opacity="0.55"/>
-  <rect x="14" y="124" width="140" height="4" rx="2" fill="#9ab0c8" opacity="0.5"/>
-  <rect x="14" y="134" width="100" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
-  <rect x="14" y="145" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
-  <rect x="14" y="156" width="80" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
-  <rect x="14" y="176" width="140" height="24" rx="7" fill="rgba(176,196,216,0.2)" stroke="#d0e4f5" stroke-width="1.5"/>
-  <text x="84" y="193" text-anchor="middle" font-size="13" fill="#e8f4ff" font-family="-apple-system,sans-serif" font-weight="700" letter-spacing="1.5">PLATINO</text>
+  <rect width="168" height="205" rx="18" fill="#1a1f2e" stroke="#b0c4d8" stroke-width="3.5"/>
+  <rect x="3" y="3" width="162" height="62" rx="15" fill="rgba(220,235,255,0.08)"/>
+  <line x1="30" y1="0" x2="130" y2="205" stroke="rgba(255,255,255,0.04)" stroke-width="30"/>
+  <circle cx="84" cy="74" r="30" fill="#141a26"/>
+  <circle cx="84" cy="74" r="26" fill="none" stroke="#9ab0c8" stroke-width="4" opacity="0.5"/>
+  <circle cx="84" cy="74" r="19" fill="#b8cede" opacity="0.9"/>
+  <circle cx="84" cy="74" r="13" fill="#d8eaf5" opacity="0.95"/>
+  <circle cx="84" cy="74" r="6" fill="white" opacity="0.95"/>
+  <ellipse cx="77" cy="63" rx="5" ry="3.5" fill="white" opacity="0.55"/>
+  <rect x="14" y="116" width="140" height="4" rx="2" fill="#9ab0c8" opacity="0.5"/>
+  <rect x="14" y="125" width="100" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="14" y="135" width="120" height="5" rx="2.5" fill="rgba(255,255,255,0.1)"/>
+  <rect x="14" y="145" width="80" height="5" rx="2.5" fill="rgba(255,255,255,0.08)"/>
+  <rect x="14" y="166" width="140" height="24" rx="7" fill="rgba(176,196,216,0.2)" stroke="#d0e4f5" stroke-width="1.5"/>
+  <text x="84" y="183" text-anchor="middle" font-size="13" fill="#e8f4ff" font-family="-apple-system,sans-serif" font-weight="700" letter-spacing="1.5">PLATINO</text>
 </g>
-<line x1="60" y1="414" x2="452" y2="414" stroke="#c9a227" stroke-width="1" opacity="0.3"/>
-<text x="256" y="460" text-anchor="middle" font-size="46" fill="#c9a227" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="700" letter-spacing="3">MAGIC CARDS</text>
+<line x1="60" y1="408" x2="452" y2="408" stroke="#c9a227" stroke-width="1" opacity="0.3"/>
+<text x="256" y="460" text-anchor="middle" font-size="44" fill="#c9a227" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="700" letter-spacing="2">MAGIC CARDS</text>
 </svg>
