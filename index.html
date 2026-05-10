@@ -148,6 +148,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .cc-sub{font-size:10px;opacity:.55;margin-top:1px}
 .cc-date{font-size:9px;opacity:.35;margin-top:2px}
 .empty{text-align:center;padding:2rem;color:rgba(255,255,255,.2);font-size:13px}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
+.lightbox.open{opacity:1;pointer-events:all}
+.lb-header{width:100%;max-width:320px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.lb-counter{font-size:12px;color:rgba(255,255,255,.4);font-weight:600}
+.lb-close{width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:white;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-card-wrap{position:relative;display:flex;align-items:center;gap:12px}
+.lb-arrow{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.08);color:white;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0}
+.lb-arrow:hover{background:rgba(255,255,255,.18)}
+.lb-arrow:disabled{opacity:.2;cursor:default}
+.lb-card{width:230px;height:325px;border-radius:18px;display:flex;flex-direction:column;overflow:hidden;border:3px solid;position:relative}
+.lb-card-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:13px}
+.lb-shine{position:absolute;inset:0;border-radius:16px;pointer-events:none;z-index:1}
+.lb-footer{margin-top:14px;text-align:center;max-width:260px}
+.lb-footer .lb-name{font-size:16px;font-weight:800}
+.lb-footer .lb-desc{font-size:12px;color:rgba(255,255,255,.4);margin-top:3px}
+.lb-footer .lb-power{font-size:11px;color:rgba(255,255,255,.35);margin-top:5px}
+.lb-dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.lb-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .15s}
+.lb-dot.active{background:white;transform:scale(1.3)}
 </style>
 </head>
 <body>
@@ -469,12 +490,18 @@ function buildCardHTML(card,tier){
     <div class="card-shine"></div>
     ${isPlat?'<div class="shimmer-sweep"></div>':''}
     <div class="card-theme-icon">${themeLabel.split(' ')[0]}</div>
-    <div class="card-inner">
+    <div class="card-inner" style="${card.image?'padding:10px':''}">
       <div class="tier-badge">${tier.emoji} ${tier.name}</div>
-      <div class="card-name">${card.name}</div>
+      <div class="card-name" style="font-size:${card.name.length>14?'16px':'20px'}">${card.name}</div>
       <div class="card-subtitle">${card.subtitle}</div>
-      <div class="card-divider"></div>
-      ${card.image?`<div style="flex:1;border-radius:8px;overflow:hidden;margin-bottom:8px;min-height:0"><img src="${card.image}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block"></div>`:`<div class="card-power">⚡ ${card.power}</div>`}
+      ${card.image
+        ?`<div style="flex:1;border-radius:10px;overflow:hidden;margin:6px 0;border:2px solid rgba(255,255,255,0.15);position:relative">
+            <img src="${card.image}" style="width:100%;height:100%;object-fit:cover;display:block">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(0,0,0,0.5) 100%)"></div>
+          </div>`
+        :`<div class="card-divider"></div>
+          <div class="card-power">⚡ ${card.power}</div>`
+      }
       <div class="stats-row">
         <div class="stat-box"><div class="stat-lbl">ATQ</div><div class="stat-val">${card.atk}</div></div>
         <div class="stat-box"><div class="stat-lbl">DEF</div><div class="stat-val">${card.def}</div></div>
@@ -488,88 +515,6 @@ function buildCardHTML(card,tier){
 function renderReveal(kidId,area){
   const kid=KIDS.find(k=>k.id===kidId),card=revealCard,tier=getTier(pending.score),isRev=revealed[kidId]||false;
   const themeLabel=THEME_LABELS[card.theme]||'';
-  const tierFrames={
-    'Bronce':'bronze metallic card frame, warm amber and copper tones',
-    'Plata':'silver metallic card frame, cool blue-grey icy tones',
-    'Oro':'gold foil card frame, warm golden light rays, radiant glow',
-    'Diamante':'diamond crystal card frame, electric cyan neon glow, sparkling',
-    'Platino':'platinum card frame, brilliant silver white shine, epic legendary aura'
-  };
-  const frameStyle=tierFrames[tier.name]||'colorful card frame';
-
-  const cardVisuals={
-    // FÚTBOL
-    'Jugador de Reserva':'a young football player in full kit sitting on the bench, hopeful expression, stadium lights',
-    'Portero Novato':'a young goalkeeper in gloves diving sideways to save a ball, surprised face, goalposts',
-    'Mediocampista Sólido':'a stocky determined midfielder running hard with the ball at his feet, packed stadium',
-    'Extremo Veloz':'a lean winger sprinting at full speed down the flank, motion blur, colorful jersey',
-    'Pedri González':'a slim young man with short dark brown hair, precise passing pose, intense eyes, blue and red football jersey',
-    'Jude Bellingham':'a tall athletic young man with short dark hair, arms raised in celebration, confident smile, white or red football kit',
-    'Lamine Yamal':'a teenage boy with curly dark hair, slim build, huge grin, dribbling at speed, blue and red jersey',
-    'Kylian Mbappé':'a lean athletic young French man with short dark hair, dark skin, arms crossed celebration pose, blue football jersey, lightning speed energy',
-    'Vinicius Jr.':'a young Brazilian man with dark skin, dreadlocks, dancing celebration pose, yellow or white football jersey, joyful expression',
-    'Erling Haaland':'a very tall muscular blonde man, blue eyes, powerful heading pose, pale skin, blue football jersey',
-    'Balón de Oro 2026':'a glowing golden trophy on a dark background with golden light rays, majestic',
-    'El Crack Eterno':'a legendary silhouetted football player lifting a trophy, golden aura, crowd behind',
-    // REAL MADRID
-    'Aficionado del Bernabéu':'an excited football fan in white jersey cheering in a huge stadium, arms raised',
-    'Cadete del Real Madrid':'a young teenage boy in white Real Madrid kit training on a pitch, determined expression',
-    'Lucas Vázquez':'a compact athletic man with short brown hair, white Real Madrid jersey, intense defensive stance',
-    'Dani Ceballos':'a slim young man with short dark hair, technical passing pose, white kit, calm expression',
-    'Rodrygo Goes':'a slim young Brazilian man with short dark hair, dark skin, bursting past defenders, white jersey',
-    'Aurélien Tchouaméni':'a tall athletic young French man with dark skin, short hair, powerful midfield interception pose, white kit',
-    'Vinícius Jr. del Madrid':'a young Brazilian man with dark skin, dreadlocks, white Real Madrid jersey, celebrating with arms open',
-    'Kylian Mbappé Blanco':'a lean French man with dark skin, short dark hair, white Real Madrid jersey, sprinting at incredible speed',
-    'La Decimoquinta':'a glowing silver Champions League trophy surrounded by white confetti and golden light',
-    'Remontada Eterna':'a dramatic comeback scene, white players celebrating under floodlights, stadium euphoria',
-    // SONIC
-    'Erizo Principiante':'a small blue cartoon hedgehog with spikes, big green eyes, running awkwardly, colorful world background',
-    'Chao Bebé':'a tiny round white creature with big blue eyes and a teardrop on its head, floating, cute and tiny',
-    'Tails':'a young orange cartoon fox with two fluffy tails spinning, big blue eyes, friendly smile, flying',
-    'Amy Rose':'a pink cartoon hedgehog girl with a red bow, big green eyes, swinging a giant red hammer, energetic pose',
-    'Knuckles':'a red muscular cartoon echidna with white crescent on chest, big spiked fists raised, rocky background',
-    'Silver the Hedgehog':'a silver cartoon hedgehog with white fur and yellow eyes, telekinesis energy swirling around his hands, futuristic background',
-    'Blaze the Cat':'a purple cartoon cat with a high ponytail and yellow eyes, surrounded by dramatic flames, elegant battle pose',
-    'Shadow the Hedgehog':'a black cartoon hedgehog with red stripes, intense red eyes, dark energy swirling around him, brooding pose',
-    'Sonic Supervelocidad':'a blue cartoon hedgehog with large green eyes, red sneakers, running at extreme speed, golden speed rings',
-    'Super Sonic':'a golden glowing cartoon hedgehog with spiky hair pointing up, seven colorful chaos emeralds orbiting around him',
-    'Sonic y Tails Unidos':'a blue cartoon hedgehog and an orange twin-tailed fox running together at speed, best friends energy',
-    // POLICÁN
-    'Cerdapio Bebé':'a tiny round purple cartoon cat villain baby with a sinister smile and tiny arms, comically harmless',
-    'Pizco':'a small clumsy cartoon villain sidekick tripping over his own feet, confused expression',
-    'Troncho':'a huge muscular cartoon villain henchman with a tiny head, flexing unnecessarily, dopey smile',
-    'Perico el Gato':'a sly cartoon cat villain in a cape, plotting expression, dramatic evil lair background, grey and purple tones',
-    'La Enfermera':'a kind cartoon nurse character with a warm smile, white uniform, holding a first aid kit heroically',
-    'El Jefe':'a grumpy cartoon police chief with a big mustache, chest full of medals, standing arms crossed, authoritative',
-    'Cerdapio Junior':'a small purple cartoon cat kid villain with big eyes, mischievous grin, tiny cape',
-    'Policán en Acción':'a cartoon dog-human hybrid police officer with floppy ears, police badge, heroic running pose, city background',
-    'Policán Superpoderoso':'a cartoon dog-human hybrid superhero in police uniform, leaping dramatically over rooftops, heroic expression',
-    'Policán Legendario':'a glowing golden cartoon dog-human hybrid police hero, legendary aura, confetti explosion, city cheering',
-    'Policán y el Jefe Unidos':'a cartoon dog-hero and a grumpy police chief standing back to back, ready for action, confident poses',
-    // HUNTRIX
-    'Zoe':'a short petite young Asian woman with big eyes, dark hair, conflicted expression, dark fantasy armor with purple accents',
-    'Mira':'a tall elegant young Asian woman with long dark hair, powerful pose, dark fantasy warrior outfit',
-    'Soy':'a calm composed young Asian woman with short hair, serene battle expression, dark armor, fighting stance',
-    'Seraphina la Caída':'a woman with torn dark wings, white hair, glowing violet eyes, half angel half demon aesthetic, dramatic pose',
-    'Rumy':'a young Asian woman with long dark hair, microphone in hand, battle dancer pose, K-pop star meets demon hunter',
-    'Las Guerreras Unidas':'four young Asian women warriors in dark fantasy K-pop outfits standing in a powerful group formation',
-    // PRINCESAS
-    'Cenicienta':'a elegant young woman in a blue ballgown with golden details, blonde hair up, glass slipper visible, magical sparkles',
-    'Aurora':'a beautiful young woman with long wavy blonde hair, pink and blue dress, sleeping beauty dreamlike soft lighting',
-    'Ariel':'a young woman with long flowing red hair underwater, green mermaid tail, wide curious blue eyes, coral reef background',
-    'Rapunzel':'a young woman with extremely long blonde hair wrapped around her, big green eyes, purple dress, glowing lanterns background',
-    'Tiana':'a young Black woman with dark hair, green lily pad dress, warm smile, New Orleans bayou background with fireflies',
-    'Bella':'a young woman with brown hair in a half-updo, golden ballgown, intelligent warm eyes, enchanted library background',
-    'Mérida':'a young Scottish woman with wild curly red hair, green medieval dress, holding a bow and arrow, highland misty background',
-    'Moana':'a young Polynesian woman with long wavy dark hair, red and white island dress, ocean waves behind her, confident pose',
-    'Elsa':'a young woman with long platinum blonde braid, ice blue dress with snowflake details, hands creating ice magic, frozen palace',
-    'Mulan':'a young Chinese woman in red and gold warrior armor, black hair, sword in hand, Great Wall of China background',
-    'Vaiana':'a young Polynesian woman with long wavy dark hair, red and white dress, heart-shaped green stone necklace, glowing ocean',
-    'Las Princesas Unidas':'a group of diverse princess characters in their iconic outfits, standing together in a magical glowing composition'
-  };
-
-  const visualDesc=cardVisuals[card.name]||'a heroic fantasy character in dynamic battle pose, dramatic lighting';
-  const geminiPrompt=`Collectible trading card art illustration. ${visualDesc}. Style: ${frameStyle}, dramatic cinematic lighting, dark rich background, highly detailed digital painting, vibrant colors, character in foreground, no text, no letters, no words, square format 1:1.`;
 
   area.innerHTML=`
     <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 0 16px">
@@ -579,17 +524,14 @@ function renderReveal(kidId,area){
             <div class="ci-name" style="color:${tier.color}">${tier.name} — ${pending.score}/5</div>
             <div class="ci-desc">${tier.desc}</div>
             <div class="ci-theme">${themeLabel}</div>
-            <div class="ci-prompt">
-              <p>Prompt para Gemini (cópialo):</p>
-              <code id="gprompt-${kidId}">${geminiPrompt}</code>
-              <button onclick="copyGeminiPrompt('${kidId}')" style="width:100%;margin-top:6px;padding:7px;border-radius:7px;border:none;background:rgba(255,255,255,.08);color:white;font-size:12px;font-weight:700;cursor:pointer">📋 Copiar prompt</button>
-            </div>
+
             <div style="margin-top:10px">
-              <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px">¿Tienes la imagen de Gemini? Súbela aquí:</p>
-              <label style="display:block;width:100%;padding:10px;border-radius:10px;border:1px dashed rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:rgba(255,255,255,.4);font-size:12px;text-align:center;cursor:pointer">
-                🖼️ Subir imagen
+              <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px">Añade una imagen a la carta (Google, galería, donde quieras):</p>
+              <label style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:10px;border:1px dashed rgba(255,255,255,.2);background:rgba(255,255,255,.04);color:rgba(255,255,255,.6);font-size:13px;font-weight:600;text-align:center;cursor:pointer;transition:all .15s" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
+                🖼️ ${card.image?'Cambiar imagen':'Subir imagen'}
                 <input type="file" accept="image/*" onchange="attachImage('${kidId}',event)" style="display:none">
               </label>
+              ${card.image?`<p style="font-size:10px;color:rgba(100,220,100,.6);margin-top:5px;text-align:center">✅ Imagen añadida — guarda la carta para conservarla</p>`:''}
             </div>
           </div>`
         :`<div class="card-back" onclick="flipReveal('${kidId}')">
@@ -608,27 +550,31 @@ function renderReveal(kidId,area){
     }`;
 }
 
-function copyGeminiPrompt(kidId){
-  const el=document.getElementById('gprompt-'+kidId);
-  if(!el)return;
-  navigator.clipboard.writeText(el.textContent).then(()=>{
-    const btn=el.nextElementSibling;
-    if(btn){btn.textContent='✅ ¡Copiado!';setTimeout(()=>{btn.textContent='📋 Copiar prompt';},2000);}
-  }).catch(()=>{
-    const r=document.createRange();r.selectNode(el);
-    window.getSelection().removeAllRanges();window.getSelection().addRange(r);
-  });
-}
-
 function attachImage(kidId,event){
   const file=event.target.files[0];
   if(!file)return;
   const reader=new FileReader();
   reader.onload=e=>{
-    if(revealCard)revealCard.image=e.target.result;
-    revealed[kidId]=true;
-    const area=document.getElementById('ea-'+kidId);
-    if(area)renderReveal(kidId,area);
+    // Crop to card art proportions using canvas (width:height = 1:0.9)
+    const img=new Image();
+    img.onload=()=>{
+      const canvas=document.createElement('canvas');
+      const TARGET_W=400, TARGET_H=360;
+      canvas.width=TARGET_W; canvas.height=TARGET_H;
+      const ctx=canvas.getContext('2d');
+      // Center-crop the image
+      const srcRatio=img.width/img.height;
+      const tgtRatio=TARGET_W/TARGET_H;
+      let sx=0,sy=0,sw=img.width,sh=img.height;
+      if(srcRatio>tgtRatio){sw=img.height*tgtRatio;sx=(img.width-sw)/2;}
+      else{sh=img.width/tgtRatio;sy=(img.height-sh)/2;}
+      ctx.drawImage(img,sx,sy,sw,sh,0,0,TARGET_W,TARGET_H);
+      if(revealCard)revealCard.image=canvas.toDataURL('image/jpeg',0.85);
+      revealed[kidId]=true;
+      const area=document.getElementById('ea-'+kidId);
+      if(area)renderReveal(kidId,area);
+    };
+    img.src=e.target.result;
   };
   reader.readAsDataURL(file);
 }
@@ -661,8 +607,8 @@ function renderCol(){
         <span style="font-size:11px;color:rgba(255,255,255,.25)">${cards.length} carta${cards.length!==1?'s':''}</span>
       </div>
       ${cards.length===0?`<div class="empty">¡Evalúa a ${kid.name} para conseguir su primera carta!</div>`
-        :`<div class="cgrid">${cards.map(c=>`
-          <div class="cc-item ${c.tierCls||''}" style="border-color:${c.tierColor}">
+        :`<div class="cgrid">${cards.map((c,ci)=>`
+          <div class="cc-item ${c.tierCls||''}" style="border-color:${c.tierColor};cursor:pointer" onclick="openLightbox('${kid.id}',${ci})">
             <div class="cc-art" style="background:${c.tierGrad}">
               ${c.image
                 ?`<img src="${c.image}" style="width:100%;height:100%;object-fit:cover;display:block">`
@@ -683,7 +629,124 @@ function renderCol(){
   });
   c.innerHTML=h;
 }
+
+// ===== LIGHTBOX =====
+let lbCards=[], lbIdx=0, lbKidId='';
+
+function openLightbox(kidId, idx){
+  lbKidId=kidId;
+  lbCards=getKS(kidId).collection;
+  lbIdx=idx;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+  renderLightbox();
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function lbBgClick(e){if(e.target===document.getElementById('lightbox'))closeLightbox();}
+
+function lbNav(dir){
+  lbIdx=(lbIdx+dir+lbCards.length)%lbCards.length;
+  renderLightbox();
+}
+
+function renderLightbox(){
+  const c=lbCards[lbIdx];
+  if(!c)return;
+  const tier=getTier(c.score);
+  const isPlat=c.tierCls==='card-platino';
+
+  // counter
+  document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbCards.length;
+
+  // arrows
+  document.getElementById('lb-prev').disabled=lbCards.length<=1;
+  document.getElementById('lb-next').disabled=lbCards.length<=1;
+
+  // card
+  const slot=document.getElementById('lb-card-slot');
+  slot.innerHTML=`
+    <div class="lb-card ${c.tierCls||''}" style="background:${c.tierGrad};border-color:${c.tierColor}">
+      <div class="lb-shine"></div>
+      ${isPlat?'<div class="shimmer-sweep"></div>':''}
+      <div class="lb-card-inner">
+        <div class="tier-badge">${tier.emoji} ${tier.name}</div>
+        <div class="card-name" style="font-size:${c.name.length>14?'16px':'20px'}">${c.name}</div>
+        <div class="card-subtitle">${c.subtitle}</div>
+        ${c.image
+          ?`<div style="flex:1;border-radius:10px;overflow:hidden;margin:6px 0;border:2px solid rgba(255,255,255,0.15);position:relative">
+              <img src="${c.image}" style="width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(0,0,0,0.5) 100%)"></div>
+            </div>`
+          :`<div class="card-divider" style="background:linear-gradient(90deg,transparent,${c.tierColor},transparent);height:1px;margin:6px 0 8px;opacity:.5"></div>
+            <div class="card-power" style="font-size:11px;font-weight:600;line-height:1.45;flex:1;padding-bottom:8px;color:rgba(255,255,255,.8)">⚡ ${c.power}</div>`
+        }
+        <div class="stats-row">
+          <div class="stat-box" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;text-align:center;padding:5px 2px">
+            <div class="stat-lbl" style="font-size:8px;font-weight:700;text-transform:uppercase;opacity:.55;color:${c.tierColor}">ATQ</div>
+            <div class="stat-val" style="font-size:16px;font-weight:900;color:${c.tierColor}">${c.atk}</div>
+          </div>
+          <div class="stat-box" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;text-align:center;padding:5px 2px">
+            <div class="stat-lbl" style="font-size:8px;font-weight:700;text-transform:uppercase;opacity:.55;color:${c.tierColor}">DEF</div>
+            <div class="stat-val" style="font-size:16px;font-weight:900;color:${c.tierColor}">${c.def}</div>
+          </div>
+          <div class="stat-box" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;text-align:center;padding:5px 2px">
+            <div class="stat-lbl" style="font-size:8px;font-weight:700;text-transform:uppercase;opacity:.55;color:${c.tierColor}">VEL</div>
+            <div class="stat-val" style="font-size:16px;font-weight:900;color:${c.tierColor}">${c.spd}</div>
+          </div>
+        </div>
+        <div class="card-flavor" style="font-size:9px;font-style:italic;line-height:1.45;text-align:center;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);opacity:.6">"${c.flavor}"</div>
+      </div>
+    </div>`;
+
+  // footer
+  document.getElementById('lb-name').style.color=c.tierColor;
+  document.getElementById('lb-name').textContent=c.tier+' — '+c.score+'/5';
+  document.getElementById('lb-desc').textContent=c.date+' · '+(THEME_LABELS[c.theme]||'');
+  document.getElementById('lb-power').textContent=c.power?'⚡ '+c.power:'';
+
+  // dots (max 10)
+  const dots=document.getElementById('lb-dots');
+  const total=Math.min(lbCards.length,10);
+  dots.innerHTML=Array.from({length:total},(_,i)=>
+    `<div class="lb-dot ${i===lbIdx%10?'active':''}" onclick="lbNav(${i-lbIdx})"></div>`
+  ).join('');
+}
+
+// Swipe support for lightbox
+let lbTouchX=null;
+document.addEventListener('touchstart',e=>{if(document.getElementById('lightbox').classList.contains('open'))lbTouchX=e.touches[0].clientX;});
+document.addEventListener('touchend',e=>{
+  if(lbTouchX===null||!document.getElementById('lightbox').classList.contains('open'))return;
+  const dx=e.changedTouches[0].clientX-lbTouchX;
+  if(Math.abs(dx)>50)lbNav(dx<0?1:-1);
+  lbTouchX=null;
+});
+
 init();
 </script>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="lbBgClick(event)">
+  <div class="lb-header">
+    <div class="lb-counter" id="lb-counter"></div>
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+  </div>
+  <div class="lb-card-wrap">
+    <button class="lb-arrow" id="lb-prev" onclick="lbNav(-1)">‹</button>
+    <div id="lb-card-slot"></div>
+    <button class="lb-arrow" id="lb-next" onclick="lbNav(1)">›</button>
+  </div>
+  <div class="lb-footer">
+    <div class="lb-name" id="lb-name"></div>
+    <div class="lb-desc" id="lb-desc"></div>
+    <div class="lb-power" id="lb-power"></div>
+  </div>
+  <div class="lb-dots" id="lb-dots"></div>
+</div>
 </body>
 </html>
