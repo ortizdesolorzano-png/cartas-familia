@@ -32,29 +32,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .sd p{font-size:14px;font-weight:700}.sd span{font-size:12px;color:rgba(255,255,255,.35)}
 .btn{width:100%;padding:14px;border-radius:14px;border:none;cursor:pointer;font-size:15px;font-weight:800;color:white;letter-spacing:.02em;transition:all .15s}
 .btn:disabled{opacity:.3;cursor:not-allowed}
+.btn:not(:disabled):active{transform:scale(.98)}
 .btn-sec{background:rgba(255,255,255,.07);color:rgba(255,255,255,.6);margin-top:8px;font-weight:600;font-size:14px}
 .ae{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:14px;color:rgba(255,255,255,.35)}
-.spin{width:32px;height:32px;border:3px solid rgba(255,255,255,.08);border-top-color:rgba(255,255,255,.6);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px}
-@keyframes spin{to{transform:rotate(360deg)}}
 .bonus{background:rgba(255,150,0,.07);border:0.5px solid rgba(255,150,0,.25);border-radius:12px;padding:11px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:#ffaa44}
-.prompt-box{background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);border-radius:14px;padding:14px;margin-bottom:10px}
-.prompt-box p{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:8px;line-height:1.5}
-.prompt-text{font-size:11px;color:#7dd3fc;font-family:monospace;line-height:1.5;word-break:break-all;background:rgba(0,0,0,.4);border-radius:8px;padding:10px}
-.copy-btn{width:100%;padding:10px;border-radius:8px;border:none;background:rgba(255,255,255,.08);color:white;cursor:pointer;font-size:13px;font-weight:700;margin-top:8px}
-.paste-box{background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);border-radius:14px;padding:14px;margin-bottom:10px}
-.paste-box p{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:8px;line-height:1.5}
-.paste-box textarea{width:100%;height:80px;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:8px;font-size:11px;font-family:monospace;resize:none;background:rgba(0,0,0,.4);color:#7dd3fc}
-.paste-box button{width:100%;padding:10px;border-radius:8px;border:0.5px solid rgba(100,220,100,.3);background:rgba(100,200,100,.08);color:#7dde7d;cursor:pointer;font-size:13px;font-weight:700;margin-top:8px}
 .stitle{font-size:11px;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
 
 /* ===== CARD DESIGNS ===== */
-.card-scene{display:flex;justify-content:center;padding:16px 0 8px}
 .the-card{width:230px;height:325px;border-radius:18px;position:relative;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s}
 .the-card:active{transform:scale(.97)}
 .card-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:13px}
 .card-shine{position:absolute;inset:0;border-radius:16px;pointer-events:none;z-index:1}
 .shimmer-sweep{position:absolute;inset:0;border-radius:16px;pointer-events:none;z-index:3;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.07) 50%,transparent 65%);animation:sweep 3s ease-in-out infinite}
-@keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(200%)} }
+@keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
 .tier-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 9px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;align-self:flex-start;margin-bottom:9px}
 .card-name{font-size:20px;font-weight:900;line-height:1.05;letter-spacing:-.02em;margin-bottom:3px}
 .card-subtitle{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;opacity:.7}
@@ -65,8 +55,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stat-lbl{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;opacity:.55}
 .stat-val{font-size:16px;font-weight:900}
 .card-flavor{font-size:9px;font-style:italic;line-height:1.45;text-align:center;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);opacity:.6}
+.card-theme-icon{position:absolute;top:12px;right:12px;font-size:16px;opacity:.4;z-index:2}
 
-/* BRONCE */
 .card-bronce{background:linear-gradient(160deg,#1e0f06,#3a2010,#1e0f06);border:2px solid #a0622a}
 .card-bronce .card-shine{background:linear-gradient(135deg,rgba(180,100,40,.12) 0%,transparent 55%)}
 .card-bronce .tier-badge{background:rgba(160,98,42,.25);border:1px solid #c8844a;color:#ffd4a0}
@@ -78,7 +68,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .card-bronce .card-power{color:#f0c090}
 .card-bronce .card-flavor{color:#d4a070}
 
-/* PLATA */
 .card-plata{background:linear-gradient(160deg,#0e121a,#18222e,#0e121a);border:2px solid #6a8faa}
 .card-plata .card-shine{background:linear-gradient(135deg,rgba(140,180,210,.1) 0%,transparent 55%)}
 .card-plata .tier-badge{background:rgba(106,143,170,.2);border:1px solid #8aadcc;color:#c8e8ff}
@@ -90,7 +79,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .card-plata .card-power{color:#b0d0ee}
 .card-plata .card-flavor{color:#90b0cc}
 
-/* ORO */
 .card-oro{background:linear-gradient(160deg,#120e00,#22180a,#120e00);border:2px solid #c9a227}
 .card-oro .card-shine{background:linear-gradient(135deg,rgba(255,210,0,.15) 0%,transparent 45%)}
 .card-oro .tier-badge{background:rgba(201,162,39,.18);border:1px solid #ffd84a;color:#fff5b0}
@@ -103,7 +91,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .card-oro .card-flavor{color:#c8a830}
 .card-oro::after{content:'';position:absolute;inset:-1px;border-radius:18px;box-shadow:0 0 18px rgba(255,200,0,.12),inset 0 0 12px rgba(255,200,0,.04);pointer-events:none;z-index:0}
 
-/* DIAMANTE */
 .card-diamante{background:linear-gradient(160deg,#001828,#002438,#001828);border:2px solid #00c8e8}
 .card-diamante .card-shine{background:linear-gradient(135deg,rgba(0,210,255,.14) 0%,transparent 45%)}
 .card-diamante .tier-badge{background:rgba(0,200,232,.15);border:1px solid #22d3ee;color:#90f0ff}
@@ -116,7 +103,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .card-diamante .card-flavor{color:#38b8d8}
 .card-diamante::after{content:'';position:absolute;inset:-1px;border-radius:18px;box-shadow:0 0 22px rgba(0,210,255,.18),inset 0 0 16px rgba(0,210,255,.06);pointer-events:none;z-index:0}
 
-/* PLATINO */
 .card-platino{background:linear-gradient(160deg,#120020,#1e0038,#120020);border:2px solid #c030e8}
 .card-platino .card-shine{background:linear-gradient(135deg,rgba(200,60,255,.18) 0%,rgba(100,60,255,.08) 35%,transparent 55%)}
 .card-platino .tier-badge{background:rgba(192,48,232,.18);border:1px solid #d946ef;color:#f0c0ff}
@@ -128,31 +114,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .card-platino .card-power{color:#e090f8}
 .card-platino .card-flavor{color:#b050d0}
 .card-platino::after{content:'';position:absolute;inset:-1px;border-radius:18px;pointer-events:none;z-index:0;animation:platglow 2s ease-in-out infinite alternate}
-@keyframes platglow{
-  from{box-shadow:0 0 20px rgba(180,40,240,.22),inset 0 0 14px rgba(180,40,240,.06)}
-  to{box-shadow:0 0 38px rgba(200,60,255,.42),0 0 65px rgba(180,40,240,.14),inset 0 0 24px rgba(200,60,255,.1)}
-}
+@keyframes platglow{from{box-shadow:0 0 20px rgba(180,40,240,.22),inset 0 0 14px rgba(180,40,240,.06)}to{box-shadow:0 0 38px rgba(200,60,255,.42),0 0 65px rgba(180,40,240,.14),inset 0 0 24px rgba(200,60,255,.1)}}
 
-/* Card back */
 .card-back{width:230px;height:325px;border-radius:18px;background:linear-gradient(160deg,#0c0c18,#141428,#0c0c18);border:2px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s}
 .card-back:active{transform:scale(.97)}
 .card-back::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,.012) 12px,rgba(255,255,255,.012) 13px)}
-.card-back .back-emoji{font-size:64px;filter:drop-shadow(0 0 20px rgba(255,255,255,.25));position:relative;z-index:1}
-.card-back .back-lbl{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.15em;text-transform:uppercase;position:relative;z-index:1}
+.back-emoji{font-size:64px;filter:drop-shadow(0 0 20px rgba(255,255,255,.25));position:relative;z-index:1}
+.back-lbl{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.15em;text-transform:uppercase;position:relative;z-index:1}
 
-/* Card info below */
 .card-info{text-align:center;padding:0 8px}
 .ci-name{font-size:18px;font-weight:800}
 .ci-desc{font-size:12px;color:rgba(255,255,255,.35);margin-top:3px}
-.ci-power{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px}
+.ci-theme{font-size:11px;color:rgba(255,255,255,.25);margin-top:4px}
+.ci-prompt{margin-top:10px;background:rgba(255,255,255,.05);border:0.5px solid rgba(255,255,255,.1);border-radius:10px;padding:10px}
+.ci-prompt p{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:5px}
+.ci-prompt code{font-size:10px;color:#7dd3fc;font-family:monospace;line-height:1.5;display:block;word-break:break-all}
 
-/* Collection */
 .cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .cc-item{border-radius:12px;border:1.5px solid;overflow:hidden;transition:transform .15s}
 .cc-item:active{transform:scale(.97)}
 .cc-art{height:75px;display:flex;align-items:center;justify-content:center;padding:8px;background:rgba(0,0,0,.25)}
 .cc-art-inner{text-align:center}
-.cc-art-emoji{font-size:18px;margin-bottom:3px}
+.cc-art-emoji{font-size:20px;margin-bottom:3px}
 .cc-art-name{font-size:10px;font-weight:800;line-height:1.2}
 .cc-info{padding:7px 9px;background:rgba(0,0,0,.35)}
 .cc-tier{font-size:11px;font-weight:800}
@@ -167,21 +150,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div id="screens"></div>
 </div>
 <script>
+// ===================== KIDS =====================
 const KIDS=[
   {id:'rafa',  name:'Rafa',  emoji:'⚽',avatarBg:'#1a3060',color:'#2563eb',grad:'linear-gradient(135deg,#1d4ed8,#1e3a8a)',
-   themeLabel:'jugadores de fútbol del Mundial 2026',examples:'Mbappé, Vinicius, Bellingham, Pedri, Yamal, Haaland, Salah'},
+   themes:['futbol','realmadrid'],themeWeights:[70,30]},
   {id:'guille',name:'Guille',emoji:'🍄',avatarBg:'#601a1a',color:'#dc2626',grad:'linear-gradient(135deg,#dc2626,#7f1d1d)',
-   themeLabel:'personajes de Mario Bros',examples:'Mario, Luigi, Bowser, Yoshi, Princess Peach, Toad, Waluigi, Wario, Rosalina'},
-  {id:'carmen',name:'Carmen',emoji:'🩸',avatarBg:'#30106a',color:'#7c3aed',grad:'linear-gradient(135deg,#7c3aed,#3b0764)',
-   themeLabel:'personajes de K-Pop Demon Hunters (película animada)',examples:'Rumy (líder vocal, inspirada en Jennie de BLACKPINK), Mira (la más alta y talentosa), Zoe (la más bajita, atraída por el lado oscuro), Soy (mantiene la calma en batalla), Jinu Saja (líder demonio), Abby Saja (el atlético), Mystery Saja (el misterioso que enamora a Zoe), Romance Saja (el encantador), Baby Saja (el más joven)'}
+   themes:['mario','futbol'],themeWeights:[70,30]},
+  {id:'carmen',name:'Carmen',emoji:'✨',avatarBg:'#30106a',color:'#7c3aed',grad:'linear-gradient(135deg,#7c3aed,#3b0764)',
+   themes:['huntrix','disney'],themeWeights:[60,40]}
 ];
-const CRITERIA=[
-  {id:'portado',  label:'Se ha portado bien',                 icon:'😊'},
-  {id:'obedecido',label:'Ha obedecido',                       icon:'✅'},
-  {id:'ayudado',  label:'Ha ayudado en casa',                 icon:'🏠'},
-  {id:'deberes',  label:'Ha hecho los deberes',               icon:'📚'},
-  {id:'hermanos', label:'Se ha portado bien con sus hermanos',icon:'🤝'}
-];
+
+// ===================== TIERS =====================
 const TIERS=[
   {score:0,name:'Sin carta',  desc:'Mañana lo harás mejor 💪',     color:'#666',   grad:'linear-gradient(135deg,#111,#1a1a1a)',   emoji:'🌑',cls:''},
   {score:1,name:'Bronce',     desc:'¡Buen primer paso!',           color:'#c8844a',grad:'linear-gradient(135deg,#1e0f06,#3a2010)',emoji:'🟫',cls:'card-bronce'},
@@ -191,13 +170,160 @@ const TIERS=[
   {score:5,name:'Platino',    desc:'¡PERFECTO! ¡Eres un campeón!', color:'#d946ef',grad:'linear-gradient(135deg,#120020,#1e0038)',emoji:'✨',cls:'card-platino'}
 ];
 
+// ===================== CARD LIBRARY =====================
+const CARDS={
+  futbol:{
+    1:[
+      {name:'Jugador de Reserva',subtitle:'Suplente del banquillo',power:'Sale en el minuto 90 sin tiempo para nada',atk:32,def:28,spd:35,emoji:'👟',flavor:'Hoy no es mi día, pero mañana sí'},
+      {name:'Portero Novato',subtitle:'Primer partido oficial',power:'Para un penalti por suerte',atk:20,def:45,spd:22,emoji:'🧤',flavor:'¡La he tocado con la punta del dedo!'},
+    ],
+    2:[
+      {name:'Mediocampista Sólido',subtitle:'Motor del equipo',power:'Recupera balones con determinación',atk:52,def:55,spd:58,emoji:'💪',flavor:'Sin mí el equipo no funciona'},
+      {name:'Extremo Veloz',subtitle:'Especialista en carreras',power:'Desborda por la banda sin freno',atk:60,def:38,spd:75,emoji:'💨',flavor:'Nadie me alcanza cuando arranco'},
+    ],
+    3:[
+      {name:'Pedri González',subtitle:'Genio del mediocampo',power:'Visión de juego que rompe defensas enteras',atk:78,def:65,spd:72,emoji:'🎯',flavor:'El fútbol es pensar más rápido que los demás'},
+      {name:'Jude Bellingham',subtitle:'Rey del área a área',power:'Aparece en todas partes y decide el partido',atk:82,def:70,spd:80,emoji:'👑',flavor:'No corro hacia el balón. El balón corre hacia mí'},
+      {name:'Lamine Yamal',subtitle:'La nueva estrella',power:'Regate imposible a cualquier defensa del mundo',atk:80,def:48,spd:90,emoji:'⚡',flavor:'Con 17 años ya hago temblar al mundo entero'},
+    ],
+    4:[
+      {name:'Kylian Mbappé',subtitle:'El rayo de Francia',power:'Sprint devastador que ningún defensa puede seguir',atk:94,def:50,spd:98,emoji:'🌩️',flavor:'Cuando arranco el estadio entero contiene la respiración'},
+      {name:'Vinicius Jr.',subtitle:'Magia pura en botas',power:'Dribla a cinco rivales y mete gol con la zurda',atk:91,def:45,spd:95,emoji:'🔥',flavor:'Bailo con el balón porque el fútbol es alegría'},
+      {name:'Erling Haaland',subtitle:'Máquina de goles',power:'Remate de cabeza imparable desde cualquier ángulo',atk:97,def:42,spd:85,emoji:'🎯',flavor:'No importa cómo llegue el balón. Siempre acaba en la red'},
+    ],
+    5:[
+      {name:'Balón de Oro 2026',subtitle:'El mejor del mundo',power:'Decide campeonatos mundiales él solo',atk:99,def:88,spd:97,emoji:'🏆',flavor:'Solo existo para ganar. El resto es historia'},
+      {name:'El Crack Eterno',subtitle:'Leyenda viva del fútbol',power:'Su sola presencia paraliza a once rivales',atk:99,def:95,spd:99,emoji:'🌟',flavor:'Hay jugadores y luego está él'},
+    ]
+  },
+  realmadrid:{
+    1:[
+      {name:'Aficionado del Bernabéu',subtitle:'Fan número 1',power:'Anima sin parar durante 90 minutos',atk:15,def:20,spd:10,emoji:'🤍',flavor:'Hala Madrid y nada más'},
+      {name:'Cadete del Real Madrid',subtitle:'Cantera blanca',power:'Aprende de los mejores del mundo',atk:35,def:30,spd:40,emoji:'⚽',flavor:'Algún día jugaré aquí'},
+    ],
+    2:[
+      {name:'Lucas Vázquez',subtitle:'El guerrero incansable',power:'Corre y defiende hasta el último segundo',atk:55,def:68,spd:65,emoji:'🛡️',flavor:'Mi corazón es blanco como mi camiseta'},
+      {name:'Dani Ceballos',subtitle:'Mediocampista técnico',power:'Toque preciso y visión de juego única',atk:62,def:58,spd:60,emoji:'🎭',flavor:'El Madrid es mi sueño hecho realidad'},
+    ],
+    3:[
+      {name:'Rodrygo Goes',subtitle:'Silencioso pero letal',power:'Aparece en momentos clave para decidir',atk:78,def:52,spd:82,emoji:'🌙',flavor:'Los grandes partidos son los que más me gustan'},
+      {name:'Aurélien Tchouaméni',subtitle:'Muro en el centro',power:'Corta todos los ataques rivales sin esfuerzo',atk:75,def:85,spd:72,emoji:'🧱',flavor:'Paso por encima de todo lo que se ponga delante'},
+    ],
+    4:[
+      {name:'Vinícius Jr. Madrid',subtitle:'El 7 del Bernabéu',power:'Humilla rivales y celebra con estilo propio',atk:93,def:47,spd:96,emoji:'🔥',flavor:'El Bernabéu me da superpoderes'},
+      {name:'Kylian Mbappé Blanco',subtitle:'La nueva era del Madrid',power:'Velocidad y gol en la misma jugada',atk:95,def:52,spd:99,emoji:'⚡',flavor:'Siempre soñé con vestir esta camiseta'},
+    ],
+    5:[
+      {name:'La Decimoquinta',subtitle:'Copa de Europa legendaria',power:'El Madrid nunca muere en Champions',atk:99,def:99,spd:95,emoji:'🏆',flavor:'Esta copa lleva nuestro nombre desde el principio'},
+      {name:'Remiontada Eterna',subtitle:'Magia blanca pura',power:'Marca 3 goles en 10 minutos cuando todo está perdido',atk:99,def:90,spd:98,emoji:'🌟',flavor:'El Madrid no muere. Renace en el último minuto'},
+    ]
+  },
+  mario:{
+    1:[
+      {name:'Goomba',subtitle:'Enemigo básico del reino',power:'Camina en línea recta esperando tropezar',atk:15,def:10,spd:12,emoji:'🍄',flavor:'Soy pequeño pero soy valiente'},
+      {name:'Koopa Troopa',subtitle:'Tortuga aventurera',power:'Se esconde en su concha al menor peligro',atk:20,def:35,spd:18,emoji:'🐢',flavor:'Mi concha es mi castillo'},
+    ],
+    2:[
+      {name:'Toad',subtitle:'El ayudante fiel',power:'Corre más rápido de lo que parece',atk:45,def:40,spd:72,emoji:'🎩',flavor:'¡La princesa está en otro castillo!'},
+      {name:'Yoshi',subtitle:'Dinosaurio fiel de Mario',power:'Lengua supersónica que atrapa enemigos al instante',atk:55,def:50,spd:68,emoji:'🦕',flavor:'Ningún obstáculo es grande cuando llevas a tu amigo'},
+    ],
+    3:[
+      {name:'Luigi',subtitle:'El hermano verde',power:'Salto más alto que nadie cuando menos lo esperas',atk:70,def:65,spd:72,emoji:'💚',flavor:'A veces el segundo es más importante que el primero'},
+      {name:'Wario',subtitle:'El villano codicioso',power:'Fuerza bruta que destroza todo lo que toca',atk:85,def:70,spd:45,emoji:'💛',flavor:'¡Wahahaha! ¡El dinero es mío!'},
+      {name:'Princess Peach',subtitle:'Soberana del Reino Champiñón',power:'Magia rosada que transforma el campo de batalla',atk:68,def:72,spd:65,emoji:'👸',flavor:'Esta vez me salvo yo solita'},
+    ],
+    4:[
+      {name:'Mario',subtitle:'El héroe del Reino Champiñón',power:'Superestrella invencible que todo lo puede',atk:88,def:80,spd:85,emoji:'⭐',flavor:'¡Aquí vamos!'},
+      {name:'Bowser',subtitle:'Rey Koopa supremo',power:'Fuego eterno que consume castillos de un soplo',atk:95,def:90,spd:65,emoji:'🔥',flavor:'Ningún héroe ha cruzado mi puente y salido ileso'},
+    ],
+    5:[
+      {name:'Bowser Rey Koopa',subtitle:'Señor supremo de las sombras',power:'Fuego eterno que consume castillos enteros de un soplo',atk:99,def:95,spd:72,emoji:'👑',flavor:'Ningún héroe ha cruzado mi puente y salido ileso'},
+      {name:'Mario Estrella',subtitle:'Héroe legendario eterno',power:'Invencible, imparable, imbatible en todos los mundos',atk:99,def:99,spd:99,emoji:'🌟',flavor:'¡Mamma mia! ¡Soy el mejor del universo!'},
+    ]
+  },
+  huntrix:{
+    1:[
+      {name:'Zoe',subtitle:'Guerrera del corazón partido',power:'Convierte sus dudas en fuerza cuando más importa',atk:48,def:42,spd:65,emoji:'🖤',flavor:'Lucho contra los demonios pero uno vive en mi corazón'},
+      {name:'Baby Saja',subtitle:'El más joven de los Saja',power:'Voz aguda que confunde a sus enemigos',atk:35,def:30,spd:55,emoji:'🌙',flavor:'Soy el más pequeño pero no el más débil'},
+    ],
+    2:[
+      {name:'Mira',subtitle:'La más alta del grupo',power:'Alcance superior que ningún rival puede evitar',atk:58,def:55,spd:60,emoji:'✨',flavor:'Mi altura es mi ventaja en cada batalla'},
+      {name:'Romance Saja',subtitle:'El visual encantador',power:'Su carisma desestabiliza a cualquier enemigo',atk:52,def:48,spd:62,emoji:'💜',flavor:'Todos caen ante mi encanto, humanos y demonios'},
+      {name:'Mara la Vampira',subtitle:'Criatura de la noche',power:'Drena la energía vital con un susurro oscuro',atk:60,def:50,spd:68,emoji:'🦇',flavor:'La oscuridad no es mi enemiga. Es mi hogar'},
+    ],
+    3:[
+      {name:'Soy',subtitle:'La calma en el caos',power:'Mantiene la compostura y decide en el momento clave',atk:72,def:75,spd:68,emoji:'⚔️',flavor:'Cuanto más caos hay, más tranquila me vuelvo yo'},
+      {name:'Mystery Saja',subtitle:'El chico misterioso',power:'Nadie sabe de dónde viene ni adónde va',atk:78,def:65,spd:80,emoji:'🌑',flavor:'Mi secreto es mi mayor arma'},
+      {name:'Abby Saja',subtitle:'El atlético del grupo',power:'Velocidad y fuerza combinadas de forma explosiva',atk:80,def:68,spd:85,emoji:'💥',flavor:'Soy más rápido que tu miedo'},
+    ],
+    4:[
+      {name:'Jinu Saja',subtitle:'Líder de los demonios',power:'Controla a sus Saja Boys con una sola mirada',atk:90,def:82,spd:78,emoji:'👁️',flavor:'Soy el recolector de almas más temido del reino'},
+      {name:'Seraphina la Caída',subtitle:'Ángel renegado del abismo',power:'Convierte la luz sagrada en oscuridad devastadora',atk:88,def:75,spd:82,emoji:'🖤',flavor:'Quien traiciona el cielo gana el poder de dos mundos'},
+    ],
+    5:[
+      {name:'Rumy',subtitle:'Líder vocal, la protagonista',power:'Su voz rompe portales dimensionales y destruye demonios',atk:95,def:85,spd:92,emoji:'🎤',flavor:'Canto para salvar al mundo y lo consigo cada vez'},
+      {name:'Las Guerreras Unidas',subtitle:'Las cuatro como una sola',power:'Juntas son invencibles ante cualquier fuerza oscura',atk:99,def:99,spd:95,emoji:'🌟',flavor:'Somos K-Pop. Somos cazadoras. Somos imparables'},
+    ]
+  },
+  disney:{
+    1:[
+      {name:'Simba Cachorro',subtitle:'El futuro Rey León',power:'Ruge con fuerza aunque nadie le tiene miedo aún',atk:30,def:25,spd:40,emoji:'🦁',flavor:'Algún día todo lo que toca el sol será mío'},
+      {name:'Flounder',subtitle:'El pez amigo de Ariel',power:'Nada rapidísimo cuando tiene mucho miedo',atk:22,def:18,spd:55,emoji:'🐠',flavor:'¡Ariel, esto no me gusta nada!'},
+    ],
+    2:[
+      {name:'Bambi',subtitle:'Príncipe del bosque',power:'Corre entre los árboles sin que nadie le vea',atk:38,def:42,spd:70,emoji:'🦌',flavor:'El bosque entero es mi hogar y mi protección'},
+      {name:'Dumbo',subtitle:'El elefante que vuela',power:'Vuela más alto que nadie con sus enormes orejas',atk:45,def:50,spd:65,emoji:'🐘',flavor:'Lo que me hacía diferente era mi superpoder'},
+      {name:'Stitch',subtitle:'Experimento 626',power:'Destruye todo lo que toca pero con mucho amor',atk:62,def:58,spd:68,emoji:'💙',flavor:'Ohana significa familia. La familia no se abandona'},
+    ],
+    3:[
+      {name:'Elsa',subtitle:'Reina de las Nieves',power:'Congela el reino entero con un solo gesto',atk:80,def:72,spd:68,emoji:'❄️',flavor:'El frío nunca me molestó de todas formas'},
+      {name:'Moana',subtitle:'Hija del océano',power:'Navega los mares más peligrosos sin miedo',atk:72,def:70,spd:78,emoji:'🌊',flavor:'El océano eligió a la persona correcta'},
+      {name:'Mulan',subtitle:'La guerrera disfrazada',power:'Derrota a un ejército entera con ingenio y valor',atk:78,def:75,spd:80,emoji:'🏯',flavor:'Mi deshonra sería no intentarlo'},
+    ],
+    4:[
+      {name:'Simba Rey León',subtitle:'El rey que regresó',power:'Ruge y hace temblar a todo el reino de la Roca',atk:92,def:85,spd:88,emoji:'🦁',flavor:'Recuerda quién eres. Recuerda quién soy yo'},
+      {name:'Mérida',subtitle:'La princesa guerrera',power:'Arco perfecto que no falla nunca jamás',atk:88,def:78,spd:85,emoji:'🏹',flavor:'Mi destino lo escribo yo con mi propio arco'},
+    ],
+    5:[
+      {name:'Mickey Mouse Legendario',subtitle:'El original. El eterno',power:'La magia de Disney fluye por sus guantes blancos',atk:95,def:95,spd:90,emoji:'🌟',flavor:'Todo comenzó con un ratón. Y sigue siendo el mejor'},
+      {name:'Vaiana Elegida',subtitle:'La que cambió el océano',power:'Restaura el corazón de Te Fiti y salva el mundo',atk:99,def:92,spd:95,emoji:'💚',flavor:'Soy Vaiana de Motunui y salvaré a mi gente'},
+    ]
+  }
+};
+
+const CRITERIA=[
+  {id:'portado',  label:'Se ha portado bien',                 icon:'😊'},
+  {id:'obedecido',label:'Ha obedecido',                       icon:'✅'},
+  {id:'ayudado',  label:'Ha ayudado en casa',                 icon:'🏠'},
+  {id:'deberes',  label:'Ha hecho los deberes',               icon:'📚'},
+  {id:'hermanos', label:'Se ha portado bien con sus hermanos',icon:'🤝'}
+];
+
 function getTier(s){return TIERS[Math.max(0,Math.min(5,s))];}
-function getState(){try{return JSON.parse(localStorage.getItem('fcards8')||'{}');}catch(e){return {};}}
-function setState(s){try{localStorage.setItem('fcards8',JSON.stringify(s));}catch(e){}}
+function getState(){try{return JSON.parse(localStorage.getItem('fcards9')||'{}');}catch(e){return {};}}
+function setState(s){try{localStorage.setItem('fcards9',JSON.stringify(s));}catch(e){}}
 function getKS(id){const s=getState();if(!s[id])s[id]={collection:[],streak:0,maxStreak:0,totalPoints:0,evals:{}};return s[id];}
 function saveKS(id,ks){const s=getState();s[id]=ks;setState(s);}
 function todayKey(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
 function streakBonus(n){if(n>=14)return '¡14 días perfectos! 🏅';if(n>=7)return '¡7 días seguidos! 🔥';return null;}
+
+function pickTheme(kid, score){
+  // Higher score = more chance of favourite theme
+  const boost = score >= 4 ? 20 : score >= 3 ? 10 : 0;
+  const weights = kid.themeWeights.map((w,i)=> i===0 ? w+boost : Math.max(5,w-boost));
+  const total = weights.reduce((a,b)=>a+b,0);
+  let r = Math.random()*total;
+  for(let i=0;i<weights.length;i++){r-=weights[i];if(r<=0)return kid.themes[i];}
+  return kid.themes[0];
+}
+
+function pickCard(theme, score){
+  const pool = CARDS[theme]?.[score];
+  if(!pool||!pool.length) return null;
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+
+const THEME_LABELS={futbol:'⚽ Fútbol Mundial 2026',realmadrid:'🤍 Real Madrid',mario:'🍄 Mario Bros',huntrix:'🩸 K-Pop Demon Hunters',disney:'✨ Disney'};
 
 let curKid=KIDS[0].id,ans={},pending=null,revealCard=null,revealed={};
 
@@ -233,7 +359,7 @@ function renderKid(kidId){
   document.getElementById('sc-'+kidId).innerHTML=`
     <div class="panel"><div class="ph">
       <div class="bav" style="background:${kid.avatarBg}">${kid.emoji}</div>
-      <div class="pi"><h2>${kid.name}</h2><p>${kid.themeLabel}</p></div>
+      <div class="pi"><h2>${kid.name}</h2><p>${kid.themes.map(t=>THEME_LABELS[t]).join(' · ')}</p></div>
       <div class="sb"><div class="sn">🔥${ks.streak}</div><div class="sl">días seguidos</div></div>
     </div></div>
     <div class="sr">
@@ -251,10 +377,6 @@ function renderEval(kidId){
   if(!area)return;
 
   if(pending?.kidId===kidId&&revealCard){renderReveal(kidId,area);return;}
-  if(pending?.kidId===kidId&&!revealCard){
-    area.innerHTML=`<div class="loading"><div class="spin"></div><p style="font-weight:700">Generando la carta de ${kid.name}...</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Gemini está creando algo especial ✨</p></div>`;
-    return;
-  }
 
   const tk=todayKey();
   if(ks.evals[tk]){
@@ -285,75 +407,45 @@ function renderEval(kidId){
     </div>
     ${score===0&&allDone
       ?`<div class="ae" style="padding:1rem">Sin puntuación hoy. ¡Mañana mejor! 💪</div>`
-      :`<button class="btn" style="background:${kid.grad}" ${!allDone?'disabled':''} onclick="prepareCard('${kidId}',${score})">
-          ${allDone?`✨ Generar carta de ${kid.name}`:'Responde todas las preguntas'}
+      :`<button class="btn" style="background:${kid.grad}" ${!allDone?'disabled':''} onclick="genCard('${kidId}',${score})">
+          ${allDone?`✨ Obtener carta de ${kid.name}`:'Responde todas las preguntas'}
         </button>`
     }`;
 }
 
-function setAns(kidId,cid,val){if(!ans[kidId])ans[kidId]={};ans[kidId][cid]=val;renderKid(kidId);}
-
-async function prepareCard(kidId,score){
-  const kid=KIDS.find(k=>k.id===kidId),ks=getKS(kidId),tier=getTier(score),bonus=streakBonus(ks.streak+1);
-  pending={kidId,score};revealCard=null;revealed[kidId]=false;renderKid(kidId);
-
-  const prompt=`Genera una carta coleccionable para un niño. Responde SOLO en JSON sin markdown ni backticks.
-
-Temática: ${kid.themeLabel}
-Personajes de ejemplo: ${kid.examples}
-Nivel de carta: ${tier.name} (${score}/5 puntos)
-${bonus?'Bonus activo: '+bonus:''}
-
-Devuelve exactamente este JSON:
-{
-  "name": "nombre del personaje",
-  "subtitle": "descripción corta (máx 5 palabras)",
-  "power": "habilidad especial (máx 8 palabras)",
-  "atk": número entre 10-99,
-  "def": número entre 10-99,
-  "spd": número entre 10-99,
-  "emoji": "emoji representativo",
-  "flavor": "frase épica (máx 12 palabras)"
-}
-${score===5?'Carta máxima: hazlo legendario y épico.':score>=3?'Carta buena: personaje notable.':'Carta básica: personaje común.'}`;
-
-  try{
-    const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDEVPZzyN5IRSAzmm1Oe7MRhofqndkjA70',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
-    });
-    const data=await res.json();
-    if(data.error)throw new Error(data.error.message||'Error de Gemini');
-    if(!data.candidates||!data.candidates.length)throw new Error('Sin respuesta de Gemini');
-    const raw=data.candidates[0]?.content?.parts?.[0]?.text||'';
-    if(!raw)throw new Error('Respuesta vacía');
-    const clean=raw.replace(/```json|```/g,'').trim();
-    const start=clean.indexOf('{'),end=clean.lastIndexOf('}');
-    if(start===-1||end===-1)throw new Error('JSON no encontrado');
-    const card=JSON.parse(clean.slice(start,end+1));
-    if(!card.name||!card.emoji)throw new Error('Carta incompleta');
-    revealCard=card;revealed[kidId]=false;renderKid(kidId);
-  }catch(e){
-    pending=null;revealCard=null;
-    const area=document.getElementById('ea-'+kidId);
-    if(area)area.innerHTML=`<div class="ae" style="color:#ff8888;padding:1.5rem"><p style="font-size:15px;font-weight:700;margin-bottom:8px">Error al generar la carta</p><p style="font-size:12px">${e.message}</p><button class="btn btn-sec" style="margin-top:12px" onclick="renderKid('${kidId}')">Reintentar</button></div>`;
-  }
+function setAns(kidId,cid,val){
+  if(!ans[kidId])ans[kidId]={};
+  ans[kidId][cid]=val;
+  renderKid(kidId);
 }
 
-function cancelPending(kidId){pending=null;revealCard=null;renderKid(kidId);}
+function genCard(kidId,score){
+  const kid=KIDS.find(k=>k.id===kidId);
+  const theme=pickTheme(kid,score);
+  const card=pickCard(theme,score);
+  if(!card){renderKid(kidId);return;}
+  // Apply streak bonus — upgrade tier visually if 7+ days
+  const ks=getKS(kidId);
+  const effectiveScore=streakBonus(ks.streak+1)&&score===5?5:score;
+  pending={kidId,score:effectiveScore,theme};
+  revealCard={...card,theme};
+  revealed[kidId]=false;
+  renderKid(kidId);
+}
 
 function buildCardHTML(card,tier){
   const isPlat=tier.cls==='card-platino';
+  const themeLabel=THEME_LABELS[card.theme]||'';
   return `<div class="the-card ${tier.cls}">
     <div class="card-shine"></div>
     ${isPlat?'<div class="shimmer-sweep"></div>':''}
+    <div class="card-theme-icon">${themeLabel.split(' ')[0]}</div>
     <div class="card-inner">
       <div class="tier-badge">${tier.emoji} ${tier.name}</div>
       <div class="card-name">${card.name}</div>
       <div class="card-subtitle">${card.subtitle}</div>
       <div class="card-divider"></div>
-      <div class="card-power">⚡ ${card.power}</div>
+      ${card.image?`<div style="flex:1;border-radius:8px;overflow:hidden;margin-bottom:8px;min-height:0"><img src="${card.image}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block"></div>`:`<div class="card-power">⚡ ${card.power}</div>`}
       <div class="stats-row">
         <div class="stat-box"><div class="stat-lbl">ATQ</div><div class="stat-val">${card.atk}</div></div>
         <div class="stat-box"><div class="stat-lbl">DEF</div><div class="stat-val">${card.def}</div></div>
@@ -366,6 +458,17 @@ function buildCardHTML(card,tier){
 
 function renderReveal(kidId,area){
   const kid=KIDS.find(k=>k.id===kidId),card=revealCard,tier=getTier(pending.score),isRev=revealed[kidId]||false;
+  const themeLabel=THEME_LABELS[card.theme]||'';
+  const tierPrompts={
+    'Bronce':'bronze metallic frame, warm amber tones, copper glow',
+    'Plata':'silver metallic frame, cool blue-grey tones, icy shimmer',
+    'Oro':'gold metallic frame, golden glow, warm yellow light rays',
+    'Diamante':'diamond crystal frame, cyan electric glow, neon blue light',
+    'Platino':'platinum frame, purple magical aura, violet neon glow, epic legendary'
+  };
+  const tierStyle=tierPrompts[tier.name]||'colorful frame';
+  const geminiPrompt=`Trading card illustration, collectible card game style. Character: "${card.name}" — ${card.subtitle}. Power: ${card.power}. Card tier: ${tier.name}. Visual style: ${tierStyle}, dramatic lighting, dark background, character in dynamic pose, highly detailed digital art, no text, no letters, square format 1:1.`;
+
   area.innerHTML=`
     <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 0 16px">
       ${isRev
@@ -373,7 +476,19 @@ function renderReveal(kidId,area){
           <div class="card-info">
             <div class="ci-name" style="color:${tier.color}">${tier.name} — ${pending.score}/5</div>
             <div class="ci-desc">${tier.desc}</div>
-            <div class="ci-power">✨ ${card.power}</div>
+            <div class="ci-theme">${themeLabel}</div>
+            <div class="ci-prompt">
+              <p>Prompt para Gemini (cópialo):</p>
+              <code id="gprompt-${kidId}">${geminiPrompt}</code>
+              <button onclick="copyGeminiPrompt('${kidId}')" style="width:100%;margin-top:6px;padding:7px;border-radius:7px;border:none;background:rgba(255,255,255,.08);color:white;font-size:12px;font-weight:700;cursor:pointer">📋 Copiar prompt</button>
+            </div>
+            <div style="margin-top:10px">
+              <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px">¿Tienes la imagen de Gemini? Súbela aquí:</p>
+              <label style="display:block;width:100%;padding:10px;border-radius:10px;border:1px dashed rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:rgba(255,255,255,.4);font-size:12px;text-align:center;cursor:pointer">
+                🖼️ Subir imagen
+                <input type="file" accept="image/*" onchange="attachImage('${kidId}',event)" style="display:none">
+              </label>
+            </div>
           </div>`
         :`<div class="card-back" onclick="flipReveal('${kidId}')">
             <div class="back-emoji">${kid.emoji}</div>
@@ -391,6 +506,31 @@ function renderReveal(kidId,area){
     }`;
 }
 
+function copyGeminiPrompt(kidId){
+  const el=document.getElementById('gprompt-'+kidId);
+  if(!el)return;
+  navigator.clipboard.writeText(el.textContent).then(()=>{
+    const btn=el.nextElementSibling;
+    if(btn){btn.textContent='✅ ¡Copiado!';setTimeout(()=>{btn.textContent='📋 Copiar prompt';},2000);}
+  }).catch(()=>{
+    const r=document.createRange();r.selectNode(el);
+    window.getSelection().removeAllRanges();window.getSelection().addRange(r);
+  });
+}
+
+function attachImage(kidId,event){
+  const file=event.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    if(revealCard)revealCard.image=e.target.result;
+    revealed[kidId]=true;
+    const area=document.getElementById('ea-'+kidId);
+    if(area)renderReveal(kidId,area);
+  };
+  reader.readAsDataURL(file);
+}
+
 function flipReveal(kidId){revealed[kidId]=true;const a=document.getElementById('ea-'+kidId);if(a)renderReveal(kidId,a);}
 
 function saveCard(kidId){
@@ -403,7 +543,8 @@ function saveCard(kidId){
   ks.maxStreak=Math.max(ks.maxStreak,ks.streak);
   ks.totalPoints=(ks.totalPoints||0)+score;
   ks.evals[tk]={score};
-  saveKS(kidId,ks);delete ans[kidId];pending=null;revealCard=null;renderKid(kidId);
+  saveKS(kidId,ks);delete ans[kidId];pending=null;revealCard=null;
+  renderKid(kidId);
 }
 
 function renderCol(){
@@ -421,15 +562,18 @@ function renderCol(){
         :`<div class="cgrid">${cards.map(c=>`
           <div class="cc-item ${c.tierCls||''}" style="border-color:${c.tierColor}">
             <div class="cc-art" style="background:${c.tierGrad}">
-              <div class="cc-art-inner">
-                <div class="cc-art-emoji">${c.emoji}</div>
-                <div class="cc-art-name" style="color:${c.tierColor}">${c.name}</div>
-              </div>
+              ${c.image
+                ?`<img src="${c.image}" style="width:100%;height:100%;object-fit:cover;display:block">`
+                :`<div class="cc-art-inner">
+                  <div class="cc-art-emoji">${c.emoji}</div>
+                  <div class="cc-art-name" style="color:${c.tierColor}">${c.name}</div>
+                </div>`
+              }
             </div>
             <div class="cc-info">
               <div class="cc-tier" style="color:${c.tierColor}">${c.tier}</div>
               <div class="cc-sub" style="color:rgba(255,255,255,.5)">${c.subtitle||''}</div>
-              <div class="cc-date">${c.date} · ${c.score}/5</div>
+              <div class="cc-date">${c.date} · ${c.score}/5 · ${THEME_LABELS[c.theme]||''}</div>
             </div>
           </div>`).join('')}</div>`
       }
