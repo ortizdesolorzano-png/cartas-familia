@@ -324,10 +324,15 @@ ${score===5?'Carta máxima: hazlo legendario y épico.':score>=3?'Carta buena: p
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
     });
     const data=await res.json();
-    const text=data.candidates[0].content.parts[0].text;
-    const clean=text.replace(/```json|```/g,'').trim();
-    const card=JSON.parse(clean);
-    if(!card.name||!card.emoji)throw new Error('incompleto');
+    if(data.error)throw new Error(data.error.message||'Error de Gemini');
+    if(!data.candidates||!data.candidates.length)throw new Error('Sin respuesta de Gemini');
+    const raw=data.candidates[0]?.content?.parts?.[0]?.text||'';
+    if(!raw)throw new Error('Respuesta vacía');
+    const clean=raw.replace(/```json|```/g,'').trim();
+    const start=clean.indexOf('{'),end=clean.lastIndexOf('}');
+    if(start===-1||end===-1)throw new Error('JSON no encontrado');
+    const card=JSON.parse(clean.slice(start,end+1));
+    if(!card.name||!card.emoji)throw new Error('Carta incompleta');
     revealCard=card;revealed[kidId]=false;renderKid(kidId);
   }catch(e){
     pending=null;revealCard=null;
