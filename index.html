@@ -160,10 +160,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 const KIDS=[
   {id:'rafa',  name:'Rafa',  emoji:'⚽',avatarBg:'#1a3060',color:'#2563eb',grad:'linear-gradient(135deg,#1d4ed8,#1e3a8a)',
    themes:['futbol','realmadrid'],themeWeights:[70,30]},
-  {id:'guille',name:'Guille',emoji:'🍄',avatarBg:'#601a1a',color:'#dc2626',grad:'linear-gradient(135deg,#dc2626,#7f1d1d)',
-   themes:['mario','futbol'],themeWeights:[70,30]},
+  {id:'guille',name:'Guille',emoji:'🦔',avatarBg:'#1a4a1a',color:'#16a34a',grad:'linear-gradient(135deg,#16a34a,#14532d)',
+   themes:['sonic','polican'],themeWeights:[60,40]},
   {id:'carmen',name:'Carmen',emoji:'✨',avatarBg:'#30106a',color:'#7c3aed',grad:'linear-gradient(135deg,#7c3aed,#3b0764)',
-   themes:['huntrix','disney'],themeWeights:[60,40]}
+   themes:['huntrix','princesas'],themeWeights:[55,45]}
 ];
 
 // ===================== TIERS =====================
@@ -181,11 +181,11 @@ const CARDS={
   futbol:{
     1:[
       {name:'Jugador de Reserva',subtitle:'Suplente del banquillo',power:'Sale en el minuto 90 sin tiempo para nada',atk:32,def:28,spd:35,emoji:'👟',flavor:'Hoy no es mi día, pero mañana sí'},
-      {name:'Portero Novato',subtitle:'Primer partido oficial',power:'Para un penalti por suerte',atk:20,def:45,spd:22,emoji:'🧤',flavor:'¡La he tocado con la punta del dedo!'},
+      {name:'Portero Novato',subtitle:'Primer partido oficial',power:'Para un penalti por suerte pura',atk:20,def:45,spd:22,emoji:'🧤',flavor:'¡La he tocado con la punta del dedo!'},
     ],
     2:[
-      {name:'Mediocampista Sólido',subtitle:'Motor del equipo',power:'Recupera balones con determinación',atk:52,def:55,spd:58,emoji:'💪',flavor:'Sin mí el equipo no funciona'},
-      {name:'Extremo Veloz',subtitle:'Especialista en carreras',power:'Desborda por la banda sin freno',atk:60,def:38,spd:75,emoji:'💨',flavor:'Nadie me alcanza cuando arranco'},
+      {name:'Mediocampista Sólido',subtitle:'Motor del equipo',power:'Recupera balones con pura determinación',atk:52,def:55,spd:58,emoji:'💪',flavor:'Sin mí el equipo no funciona'},
+      {name:'Extremo Veloz',subtitle:'Especialista en la banda',power:'Desborda por banda sin que nadie le frene',atk:60,def:38,spd:75,emoji:'💨',flavor:'Nadie me alcanza cuando arranco'},
     ],
     3:[
       {name:'Pedri González',subtitle:'Genio del mediocampo',power:'Visión de juego que rompe defensas enteras',atk:78,def:65,spd:72,emoji:'🎯',flavor:'El fútbol es pensar más rápido que los demás'},
@@ -195,7 +195,7 @@ const CARDS={
     4:[
       {name:'Kylian Mbappé',subtitle:'El rayo de Francia',power:'Sprint devastador que ningún defensa puede seguir',atk:94,def:50,spd:98,emoji:'🌩️',flavor:'Cuando arranco el estadio entero contiene la respiración'},
       {name:'Vinicius Jr.',subtitle:'Magia pura en botas',power:'Dribla a cinco rivales y mete gol con la zurda',atk:91,def:45,spd:95,emoji:'🔥',flavor:'Bailo con el balón porque el fútbol es alegría'},
-      {name:'Erling Haaland',subtitle:'Máquina de goles',power:'Remate de cabeza imparable desde cualquier ángulo',atk:97,def:42,spd:85,emoji:'🎯',flavor:'No importa cómo llegue el balón. Siempre acaba en la red'},
+      {name:'Erling Haaland',subtitle:'Máquina de goles',power:'Remate de cabeza imparable desde cualquier ángulo',atk:97,def:42,spd:85,emoji:'🎯',flavor:'No importa cómo llegue. Siempre acaba en la red'},
     ],
     5:[
       {name:'Balón de Oro 2026',subtitle:'El mejor del mundo',power:'Decide campeonatos mundiales él solo',atk:99,def:88,spd:97,emoji:'🏆',flavor:'Solo existo para ganar. El resto es historia'},
@@ -205,46 +205,69 @@ const CARDS={
   realmadrid:{
     1:[
       {name:'Aficionado del Bernabéu',subtitle:'Fan número 1',power:'Anima sin parar durante 90 minutos',atk:15,def:20,spd:10,emoji:'🤍',flavor:'Hala Madrid y nada más'},
-      {name:'Cadete del Real Madrid',subtitle:'Cantera blanca',power:'Aprende de los mejores del mundo',atk:35,def:30,spd:40,emoji:'⚽',flavor:'Algún día jugaré aquí'},
+      {name:'Cadete del Real Madrid',subtitle:'Cantera blanca',power:'Aprende de los mejores del mundo cada día',atk:35,def:30,spd:40,emoji:'⚽',flavor:'Algún día jugaré en el Bernabéu'},
     ],
     2:[
       {name:'Lucas Vázquez',subtitle:'El guerrero incansable',power:'Corre y defiende hasta el último segundo',atk:55,def:68,spd:65,emoji:'🛡️',flavor:'Mi corazón es blanco como mi camiseta'},
       {name:'Dani Ceballos',subtitle:'Mediocampista técnico',power:'Toque preciso y visión de juego única',atk:62,def:58,spd:60,emoji:'🎭',flavor:'El Madrid es mi sueño hecho realidad'},
     ],
     3:[
-      {name:'Rodrygo Goes',subtitle:'Silencioso pero letal',power:'Aparece en momentos clave para decidir',atk:78,def:52,spd:82,emoji:'🌙',flavor:'Los grandes partidos son los que más me gustan'},
+      {name:'Rodrygo Goes',subtitle:'Silencioso pero letal',power:'Aparece en momentos clave para decidir partidos',atk:78,def:52,spd:82,emoji:'🌙',flavor:'Los grandes partidos son los que más me gustan'},
       {name:'Aurélien Tchouaméni',subtitle:'Muro en el centro',power:'Corta todos los ataques rivales sin esfuerzo',atk:75,def:85,spd:72,emoji:'🧱',flavor:'Paso por encima de todo lo que se ponga delante'},
     ],
     4:[
-      {name:'Vinícius Jr. Madrid',subtitle:'El 7 del Bernabéu',power:'Humilla rivales y celebra con estilo propio',atk:93,def:47,spd:96,emoji:'🔥',flavor:'El Bernabéu me da superpoderes'},
-      {name:'Kylian Mbappé Blanco',subtitle:'La nueva era del Madrid',power:'Velocidad y gol en la misma jugada',atk:95,def:52,spd:99,emoji:'⚡',flavor:'Siempre soñé con vestir esta camiseta'},
+      {name:'Vinícius Jr. del Madrid',subtitle:'El 7 del Bernabéu',power:'Humilla rivales y celebra con estilo propio',atk:93,def:47,spd:96,emoji:'🔥',flavor:'El Bernabéu me da superpoderes'},
+      {name:'Kylian Mbappé Blanco',subtitle:'La nueva era del Madrid',power:'Velocidad y gol en la misma jugada perfecta',atk:95,def:52,spd:99,emoji:'⚡',flavor:'Siempre soñé con vestir esta camiseta'},
     ],
     5:[
-      {name:'La Decimoquinta',subtitle:'Copa de Europa legendaria',power:'El Madrid nunca muere en Champions',atk:99,def:99,spd:95,emoji:'🏆',flavor:'Esta copa lleva nuestro nombre desde el principio'},
-      {name:'Remiontada Eterna',subtitle:'Magia blanca pura',power:'Marca 3 goles en 10 minutos cuando todo está perdido',atk:99,def:90,spd:98,emoji:'🌟',flavor:'El Madrid no muere. Renace en el último minuto'},
+      {name:'La Decimoquinta',subtitle:'Copa de Europa legendaria',power:'El Madrid nunca muere en Champions League',atk:99,def:99,spd:95,emoji:'🏆',flavor:'Esta copa lleva nuestro nombre desde el principio'},
+      {name:'Remontada Eterna',subtitle:'Magia blanca pura',power:'Marca 3 goles en 10 minutos cuando todo está perdido',atk:99,def:90,spd:98,emoji:'🌟',flavor:'El Madrid no muere. Renace en el último minuto'},
     ]
   },
-  mario:{
+  sonic:{
     1:[
-      {name:'Goomba',subtitle:'Enemigo básico del reino',power:'Camina en línea recta esperando tropezar',atk:15,def:10,spd:12,emoji:'🍄',flavor:'Soy pequeño pero soy valiente'},
-      {name:'Koopa Troopa',subtitle:'Tortuga aventurera',power:'Se esconde en su concha al menor peligro',atk:20,def:35,spd:18,emoji:'🐢',flavor:'Mi concha es mi castillo'},
+      {name:'Erizo Principiante',subtitle:'Aprendiz de velocista',power:'Corre un poco más rápido que andar',atk:28,def:22,spd:45,emoji:'🦔',flavor:'Algún día correré tan rápido como Sonic'},
+      {name:'Chao Bebé',subtitle:'La criatura más tierna',power:'Su ternura desconcierta a los enemigos del bien',atk:18,def:25,spd:30,emoji:'🩵',flavor:'Chao chao chao'},
     ],
     2:[
-      {name:'Toad',subtitle:'El ayudante fiel',power:'Corre más rápido de lo que parece',atk:45,def:40,spd:72,emoji:'🎩',flavor:'¡La princesa está en otro castillo!'},
-      {name:'Yoshi',subtitle:'Dinosaurio fiel de Mario',power:'Lengua supersónica que atrapa enemigos al instante',atk:55,def:50,spd:68,emoji:'🦕',flavor:'Ningún obstáculo es grande cuando llevas a tu amigo'},
+      {name:'Tails',subtitle:'El zorro de dos colas',power:'Vuela con sus colas girando a gran velocidad',atk:55,def:50,spd:68,emoji:'🦊',flavor:'Sonic es mi mejor amigo y yo siempre le apoyo'},
+      {name:'Amy Rose',subtitle:'La chica con el martillo',power:'Golpe de martillo que aplasta cualquier robot',atk:62,def:48,spd:58,emoji:'🔨',flavor:'¡Sonic espérame!'},
     ],
     3:[
-      {name:'Luigi',subtitle:'El hermano verde',power:'Salto más alto que nadie cuando menos lo esperas',atk:70,def:65,spd:72,emoji:'💚',flavor:'A veces el segundo es más importante que el primero'},
-      {name:'Wario',subtitle:'El villano codicioso',power:'Fuerza bruta que destroza todo lo que toca',atk:85,def:70,spd:45,emoji:'💛',flavor:'¡Wahahaha! ¡El dinero es mío!'},
-      {name:'Princess Peach',subtitle:'Soberana del Reino Champiñón',power:'Magia rosada que transforma el campo de batalla',atk:68,def:72,spd:65,emoji:'👸',flavor:'Esta vez me salvo yo solita'},
+      {name:'Knuckles',subtitle:'Guardián del Caos Esmeralda',power:'Puñetazo que rompe rocas y robots de un golpe',atk:82,def:75,spd:62,emoji:'👊',flavor:'Soy el último de mi raza y protejo la Esmeralda Maestra'},
+      {name:'Silver the Hedgehog',subtitle:'El erizo del futuro',power:'Telekinesis que lanza objetos a gran velocidad',atk:78,def:65,spd:70,emoji:'🔮',flavor:'¡No te lo permitiré!'},
+      {name:'Blaze the Cat',subtitle:'Princesa del Sol Soleado',power:'Llamas que incineran cualquier obstáculo del camino',atk:80,def:68,spd:75,emoji:'🔥',flavor:'El fuego es mi poder y mi escudo'},
     ],
     4:[
-      {name:'Mario',subtitle:'El héroe del Reino Champiñón',power:'Superestrella invencible que todo lo puede',atk:88,def:80,spd:85,emoji:'⭐',flavor:'¡Aquí vamos!'},
-      {name:'Bowser',subtitle:'Rey Koopa supremo',power:'Fuego eterno que consume castillos de un soplo',atk:95,def:90,spd:65,emoji:'🔥',flavor:'Ningún héroe ha cruzado mi puente y salido ileso'},
+      {name:'Shadow the Hedgehog',subtitle:'El erizo definitivo',power:'Caos Control que detiene el tiempo mismo',atk:92,def:82,spd:95,emoji:'🖤',flavor:'Soy lo que soy por mi propio poder'},
+      {name:'Sonic Supervelocidad',subtitle:'El erizo más rápido del mundo',power:'Rompe la barrera del sonido y hace estallar robots',atk:88,def:72,spd:99,emoji:'⚡',flavor:'¡Gotta go fast! ¡Más rápido que el sonido!'},
     ],
     5:[
-      {name:'Bowser Rey Koopa',subtitle:'Señor supremo de las sombras',power:'Fuego eterno que consume castillos enteros de un soplo',atk:99,def:95,spd:72,emoji:'👑',flavor:'Ningún héroe ha cruzado mi puente y salido ileso'},
-      {name:'Mario Estrella',subtitle:'Héroe legendario eterno',power:'Invencible, imparable, imbatible en todos los mundos',atk:99,def:99,spd:99,emoji:'🌟',flavor:'¡Mamma mia! ¡Soy el mejor del universo!'},
+      {name:'Super Sonic',subtitle:'Forma dorada legendaria',power:'Invencible con las 7 Esmeraldas del Caos',atk:99,def:95,spd:99,emoji:'⭐',flavor:'¡Con el poder de las Esmeraldas del Caos soy imparable!'},
+      {name:'Sonic y Tails Unidos',subtitle:'La amistad más veloz',power:'Juntos no hay robot de Eggman que les detenga',atk:97,def:90,spd:99,emoji:'🌟',flavor:'La amistad es más rápida que la luz'},
+    ]
+  },
+  polican:{
+    1:[
+      {name:'Cerdapio Bebé',subtitle:'El malvado más pequeño',power:'Intenta hacer el mal pero se le olvida siempre',atk:18,def:15,spd:20,emoji:'🐷',flavor:'¡Seré malvado! ¿O era mañana?'},
+      {name:'Pizco',subtitle:'Secuaz un poco torpe',power:'Cae en sus propias trampas con frecuencia',atk:22,def:18,spd:25,emoji:'🙈',flavor:'¡Jefe, creo que he vuelto a meter la pata!'},
+    ],
+    2:[
+      {name:'Troncho',subtitle:'El secuaz grandote',power:'Fuerza bruta pero sin mucha coordinación',atk:55,def:48,spd:30,emoji:'💪',flavor:'¡Troncho aplasta! ¡Troncho fuerte!'},
+      {name:'Perico el Gato',subtitle:'El villano felino',power:'Planes malvados que casi nunca salen bien',atk:58,def:45,spd:52,emoji:'🐱',flavor:'¡Esta vez Policán no me lo impedirá!'},
+    ],
+    3:[
+      {name:'La Enfermera',subtitle:'La heroína del hospital',power:'Cura a los heridos y mantiene la calma total',atk:60,def:72,spd:65,emoji:'💉',flavor:'Mi misión es ayudar a los demás sin descanso'},
+      {name:'El Jefe',subtitle:'El comisario gruñón',power:'Su autoridad pone orden en el mayor caos',atk:68,def:75,spd:55,emoji:'🎖️',flavor:'¡Policán! ¡No te sientes en mi sofá nuevo!'},
+      {name:'Cerdapio Junior',subtitle:'Hijo del supervillano',power:'Más listo que su padre pero igual de travieso',atk:72,def:62,spd:68,emoji:'🐽',flavor:'Seré el mejor supervillano del mundo mundial'},
+    ],
+    4:[
+      {name:'Policán en Acción',subtitle:'Héroe mitad perro mitad policía',power:'Olfato canino y valentía humana al máximo',atk:88,def:80,spd:82,emoji:'🐾',flavor:'Soy Policán y protejo la ciudad ladrando de valor'},
+      {name:'Policán Superpoderoso',subtitle:'Modo héroe activado',power:'Instintos de perro y cerebro de policía combinados',atk:92,def:85,spd:88,emoji:'🦸',flavor:'¡Guau! ¡Nadie hace el mal en mi ciudad!'},
+    ],
+    5:[
+      {name:'Policán Legendario',subtitle:'El héroe más perruno',power:'Derrota a Cerdapio y todos sus secuaces de un salto',atk:99,def:95,spd:92,emoji:'⭐',flavor:'Mitad perro, mitad policía, cien por cien héroe'},
+      {name:'Policán y el Jefe Unidos',subtitle:'El dúo invencible',power:'Juntos no hay supervillano que pueda con ellos',atk:97,def:98,spd:88,emoji:'🏅',flavor:'La ley y el orden... y muchos ladridos'},
     ]
   },
   huntrix:{
@@ -255,10 +278,9 @@ const CARDS={
     2:[
       {name:'Mira',subtitle:'La más alta del grupo',power:'Alcance superior que ningún rival puede evitar',atk:58,def:55,spd:60,emoji:'✨',flavor:'Mi altura es mi ventaja en cada batalla'},
       {name:'Romance Saja',subtitle:'El visual encantador',power:'Su carisma desestabiliza a cualquier enemigo',atk:52,def:48,spd:62,emoji:'💜',flavor:'Todos caen ante mi encanto, humanos y demonios'},
-      {name:'Mara la Vampira',subtitle:'Criatura de la noche',power:'Drena la energía vital con un susurro oscuro',atk:60,def:50,spd:68,emoji:'🦇',flavor:'La oscuridad no es mi enemiga. Es mi hogar'},
     ],
     3:[
-      {name:'Soy',subtitle:'La calma en el caos',power:'Mantiene la compostura y decide en el momento clave',atk:72,def:75,spd:68,emoji:'⚔️',flavor:'Cuanto más caos hay, más tranquila me vuelvo yo'},
+      {name:'Soy',subtitle:'La calma en el caos',power:'Mantiene la compostura y decide en el momento clave',atk:72,def:75,spd:68,emoji:'⚔️',flavor:'Cuanto más caos hay más tranquila me vuelvo yo'},
       {name:'Mystery Saja',subtitle:'El chico misterioso',power:'Nadie sabe de dónde viene ni adónde va',atk:78,def:65,spd:80,emoji:'🌑',flavor:'Mi secreto es mi mayor arma'},
       {name:'Abby Saja',subtitle:'El atlético del grupo',power:'Velocidad y fuerza combinadas de forma explosiva',atk:80,def:68,spd:85,emoji:'💥',flavor:'Soy más rápido que tu miedo'},
     ],
@@ -267,36 +289,35 @@ const CARDS={
       {name:'Seraphina la Caída',subtitle:'Ángel renegado del abismo',power:'Convierte la luz sagrada en oscuridad devastadora',atk:88,def:75,spd:82,emoji:'🖤',flavor:'Quien traiciona el cielo gana el poder de dos mundos'},
     ],
     5:[
-      {name:'Rumy',subtitle:'Líder vocal, la protagonista',power:'Su voz rompe portales dimensionales y destruye demonios',atk:95,def:85,spd:92,emoji:'🎤',flavor:'Canto para salvar al mundo y lo consigo cada vez'},
+      {name:'Rumy',subtitle:'Líder vocal y protagonista',power:'Su voz rompe portales dimensionales y destruye demonios',atk:95,def:85,spd:92,emoji:'🎤',flavor:'Canto para salvar al mundo y lo consigo cada vez'},
       {name:'Las Guerreras Unidas',subtitle:'Las cuatro como una sola',power:'Juntas son invencibles ante cualquier fuerza oscura',atk:99,def:99,spd:95,emoji:'🌟',flavor:'Somos K-Pop. Somos cazadoras. Somos imparables'},
     ]
   },
-  disney:{
+  princesas:{
     1:[
-      {name:'Simba Cachorro',subtitle:'El futuro Rey León',power:'Ruge con fuerza aunque nadie le tiene miedo aún',atk:30,def:25,spd:40,emoji:'🦁',flavor:'Algún día todo lo que toca el sol será mío'},
-      {name:'Flounder',subtitle:'El pez amigo de Ariel',power:'Nada rapidísimo cuando tiene mucho miedo',atk:22,def:18,spd:55,emoji:'🐠',flavor:'¡Ariel, esto no me gusta nada!'},
+      {name:'Cenicienta',subtitle:'La chica del zapato de cristal',power:'Su bondad conquista corazones en el palacio',atk:30,def:35,spd:40,emoji:'👠',flavor:'Si crees en los sueños estos se harán realidad'},
+      {name:'Aurora',subtitle:'La bella durmiente',power:'Su gracia y belleza encantan a todo el reino',atk:28,def:32,spd:35,emoji:'🌹',flavor:'Soñé con un amor verdadero y lo encontré'},
     ],
     2:[
-      {name:'Bambi',subtitle:'Príncipe del bosque',power:'Corre entre los árboles sin que nadie le vea',atk:38,def:42,spd:70,emoji:'🦌',flavor:'El bosque entero es mi hogar y mi protección'},
-      {name:'Dumbo',subtitle:'El elefante que vuela',power:'Vuela más alto que nadie con sus enormes orejas',atk:45,def:50,spd:65,emoji:'🐘',flavor:'Lo que me hacía diferente era mi superpoder'},
-      {name:'Stitch',subtitle:'Experimento 626',power:'Destruye todo lo que toca pero con mucho amor',atk:62,def:58,spd:68,emoji:'💙',flavor:'Ohana significa familia. La familia no se abandona'},
+      {name:'Ariel',subtitle:'La sirenita curiosa',power:'Nada más rápido que cualquier criatura del mar',atk:45,def:40,spd:72,emoji:'🧜',flavor:'Quiero ser parte de tu mundo'},
+      {name:'Rapunzel',subtitle:'La princesa de los cabellos mágicos',power:'Su pelo de 70 metros puede con cualquier enemigo',atk:52,def:55,spd:58,emoji:'🌸',flavor:'¡Al fin he visto las luces flotantes!'},
+      {name:'Tiana',subtitle:'La princesa y el sapo',power:'Su determinación convierte los sueños en realidad',atk:55,def:50,spd:60,emoji:'🐸',flavor:'Casi allí con trabajo duro y un poco de magia'},
     ],
     3:[
-      {name:'Elsa',subtitle:'Reina de las Nieves',power:'Congela el reino entero con un solo gesto',atk:80,def:72,spd:68,emoji:'❄️',flavor:'El frío nunca me molestó de todas formas'},
-      {name:'Moana',subtitle:'Hija del océano',power:'Navega los mares más peligrosos sin miedo',atk:72,def:70,spd:78,emoji:'🌊',flavor:'El océano eligió a la persona correcta'},
-      {name:'Mulan',subtitle:'La guerrera disfrazada',power:'Derrota a un ejército entera con ingenio y valor',atk:78,def:75,spd:80,emoji:'🏯',flavor:'Mi deshonra sería no intentarlo'},
+      {name:'Bella',subtitle:'La chica de los libros',power:'Su inteligencia y valentía rompen cualquier hechizo',atk:68,def:70,spd:62,emoji:'📚',flavor:'Las cosas no son siempre lo que parecen'},
+      {name:'Mérida',subtitle:'La princesa guerrera',power:'Arco perfecto que no falla nunca jamás',atk:78,def:70,spd:80,emoji:'🏹',flavor:'Mi destino lo escribo yo con mi propio arco'},
+      {name:'Moana',subtitle:'Hija del océano',power:'Navega los mares más peligrosos sin miedo alguno',atk:72,def:68,spd:78,emoji:'🌊',flavor:'El océano eligió a la persona correcta'},
     ],
     4:[
-      {name:'Simba Rey León',subtitle:'El rey que regresó',power:'Ruge y hace temblar a todo el reino de la Roca',atk:92,def:85,spd:88,emoji:'🦁',flavor:'Recuerda quién eres. Recuerda quién soy yo'},
-      {name:'Mérida',subtitle:'La princesa guerrera',power:'Arco perfecto que no falla nunca jamás',atk:88,def:78,spd:85,emoji:'🏹',flavor:'Mi destino lo escribo yo con mi propio arco'},
+      {name:'Elsa',subtitle:'Reina de las Nieves',power:'Congela el reino entero con un solo gesto poderoso',atk:85,def:80,spd:70,emoji:'❄️',flavor:'El frío nunca me molestó de todas formas'},
+      {name:'Mulan',subtitle:'La guerrera disfrazada',power:'Derrota a un ejército entero con ingenio y valor',atk:82,def:78,spd:85,emoji:'🏯',flavor:'Mi deshonra sería no intentarlo siquiera'},
     ],
     5:[
-      {name:'Mickey Mouse Legendario',subtitle:'El original. El eterno',power:'La magia de Disney fluye por sus guantes blancos',atk:95,def:95,spd:90,emoji:'🌟',flavor:'Todo comenzó con un ratón. Y sigue siendo el mejor'},
-      {name:'Vaiana Elegida',subtitle:'La que cambió el océano',power:'Restaura el corazón de Te Fiti y salva el mundo',atk:99,def:92,spd:95,emoji:'💚',flavor:'Soy Vaiana de Motunui y salvaré a mi gente'},
+      {name:'Vaiana',subtitle:'La elegida por el océano',power:'Restaura el corazón de Te Fiti y salva el mundo',atk:95,def:88,spd:92,emoji:'💚',flavor:'Soy Vaiana de Motunui y salvaré a mi gente'},
+      {name:'Las Princesas Unidas',subtitle:'Todas juntas son invencibles',power:'La magia de todas las princesas combinada es infinita',atk:99,def:99,spd:95,emoji:'👸',flavor:'Juntas somos más fuertes que cualquier hechizo oscuro'},
     ]
   }
-};
-
+}
 const CRITERIA=[
   {id:'portado',  label:'Se ha portado bien',                 icon:'😊'},
   {id:'obedecido',label:'Ha obedecido',                       icon:'✅'},
@@ -329,7 +350,7 @@ function pickCard(theme, score){
   return pool[Math.floor(Math.random()*pool.length)];
 }
 
-const THEME_LABELS={futbol:'⚽ Fútbol Mundial 2026',realmadrid:'🤍 Real Madrid',mario:'🍄 Mario Bros',huntrix:'🩸 K-Pop Demon Hunters',disney:'✨ Disney'};
+const THEME_LABELS={futbol:'⚽ Fútbol Mundial 2026',realmadrid:'🤍 Real Madrid',sonic:'🦔 Sonic the Hedgehog',polican:'🐾 Policán',huntrix:'🩸 K-Pop Demon Hunters',princesas:'👸 Princesas Disney'};
 
 let curKid=KIDS[0].id,ans={},pending=null,revealCard=null,revealed={};
 
@@ -465,15 +486,93 @@ function buildCardHTML(card,tier){
 function renderReveal(kidId,area){
   const kid=KIDS.find(k=>k.id===kidId),card=revealCard,tier=getTier(pending.score),isRev=revealed[kidId]||false;
   const themeLabel=THEME_LABELS[card.theme]||'';
-  const tierPrompts={
-    'Bronce':'bronze metallic frame, warm amber tones, copper glow',
-    'Plata':'silver metallic frame, cool blue-grey tones, icy shimmer',
-    'Oro':'gold metallic frame, golden glow, warm yellow light rays',
-    'Diamante':'diamond crystal frame, cyan electric glow, neon blue light',
-    'Platino':'platinum frame, purple magical aura, violet neon glow, epic legendary'
+  const tierFrames={
+    'Bronce':'bronze metallic card frame, warm amber and copper tones',
+    'Plata':'silver metallic card frame, cool blue-grey icy tones',
+    'Oro':'gold foil card frame, warm golden light rays, radiant glow',
+    'Diamante':'diamond crystal card frame, electric cyan neon glow, sparkling',
+    'Platino':'platinum card frame, brilliant silver white shine, epic legendary aura'
   };
-  const tierStyle=tierPrompts[tier.name]||'colorful frame';
-  const geminiPrompt=`Trading card illustration, collectible card game style. Character: "${card.name}" — ${card.subtitle}. Power: ${card.power}. Card tier: ${tier.name}. Visual style: ${tierStyle}, dramatic lighting, dark background, character in dynamic pose, highly detailed digital art, no text, no letters, square format 1:1.`;
+  const frameStyle=tierFrames[tier.name]||'colorful card frame';
+
+  const cardVisuals={
+    // FÚTBOL
+    'Jugador de Reserva':'a young football player in full kit sitting on the bench, hopeful expression, stadium lights',
+    'Portero Novato':'a young goalkeeper in gloves diving sideways to save a ball, surprised face, goalposts',
+    'Mediocampista Sólido':'a stocky determined midfielder running hard with the ball at his feet, packed stadium',
+    'Extremo Veloz':'a lean winger sprinting at full speed down the flank, motion blur, colorful jersey',
+    'Pedri González':'a slim young man with short dark brown hair, precise passing pose, intense eyes, blue and red football jersey',
+    'Jude Bellingham':'a tall athletic young man with short dark hair, arms raised in celebration, confident smile, white or red football kit',
+    'Lamine Yamal':'a teenage boy with curly dark hair, slim build, huge grin, dribbling at speed, blue and red jersey',
+    'Kylian Mbappé':'a lean athletic young French man with short dark hair, dark skin, arms crossed celebration pose, blue football jersey, lightning speed energy',
+    'Vinicius Jr.':'a young Brazilian man with dark skin, dreadlocks, dancing celebration pose, yellow or white football jersey, joyful expression',
+    'Erling Haaland':'a very tall muscular blonde man, blue eyes, powerful heading pose, pale skin, blue football jersey',
+    'Balón de Oro 2026':'a glowing golden trophy on a dark background with golden light rays, majestic',
+    'El Crack Eterno':'a legendary silhouetted football player lifting a trophy, golden aura, crowd behind',
+    // REAL MADRID
+    'Aficionado del Bernabéu':'an excited football fan in white jersey cheering in a huge stadium, arms raised',
+    'Cadete del Real Madrid':'a young teenage boy in white Real Madrid kit training on a pitch, determined expression',
+    'Lucas Vázquez':'a compact athletic man with short brown hair, white Real Madrid jersey, intense defensive stance',
+    'Dani Ceballos':'a slim young man with short dark hair, technical passing pose, white kit, calm expression',
+    'Rodrygo Goes':'a slim young Brazilian man with short dark hair, dark skin, bursting past defenders, white jersey',
+    'Aurélien Tchouaméni':'a tall athletic young French man with dark skin, short hair, powerful midfield interception pose, white kit',
+    'Vinícius Jr. del Madrid':'a young Brazilian man with dark skin, dreadlocks, white Real Madrid jersey, celebrating with arms open',
+    'Kylian Mbappé Blanco':'a lean French man with dark skin, short dark hair, white Real Madrid jersey, sprinting at incredible speed',
+    'La Decimoquinta':'a glowing silver Champions League trophy surrounded by white confetti and golden light',
+    'Remontada Eterna':'a dramatic comeback scene, white players celebrating under floodlights, stadium euphoria',
+    // SONIC
+    'Erizo Principiante':'a small blue cartoon hedgehog with spikes, big green eyes, running awkwardly, colorful world background',
+    'Chao Bebé':'a tiny round white creature with big blue eyes and a teardrop on its head, floating, cute and tiny',
+    'Tails':'a young orange cartoon fox with two fluffy tails spinning, big blue eyes, friendly smile, flying',
+    'Amy Rose':'a pink cartoon hedgehog girl with a red bow, big green eyes, swinging a giant red hammer, energetic pose',
+    'Knuckles':'a red muscular cartoon echidna with white crescent on chest, big spiked fists raised, rocky background',
+    'Silver the Hedgehog':'a silver cartoon hedgehog with white fur and yellow eyes, telekinesis energy swirling around his hands, futuristic background',
+    'Blaze the Cat':'a purple cartoon cat with a high ponytail and yellow eyes, surrounded by dramatic flames, elegant battle pose',
+    'Shadow the Hedgehog':'a black cartoon hedgehog with red stripes, intense red eyes, dark energy swirling around him, brooding pose',
+    'Sonic Supervelocidad':'a blue cartoon hedgehog with large green eyes, red sneakers, running at extreme speed, golden speed rings',
+    'Super Sonic':'a golden glowing cartoon hedgehog with spiky hair pointing up, seven colorful chaos emeralds orbiting around him',
+    'Sonic y Tails Unidos':'a blue cartoon hedgehog and an orange twin-tailed fox running together at speed, best friends energy',
+    // POLICÁN
+    'Cerdapio Bebé':'a tiny round purple cartoon cat villain baby with a sinister smile and tiny arms, comically harmless',
+    'Pizco':'a small clumsy cartoon villain sidekick tripping over his own feet, confused expression',
+    'Troncho':'a huge muscular cartoon villain henchman with a tiny head, flexing unnecessarily, dopey smile',
+    'Perico el Gato':'a sly cartoon cat villain in a cape, plotting expression, dramatic evil lair background, grey and purple tones',
+    'La Enfermera':'a kind cartoon nurse character with a warm smile, white uniform, holding a first aid kit heroically',
+    'El Jefe':'a grumpy cartoon police chief with a big mustache, chest full of medals, standing arms crossed, authoritative',
+    'Cerdapio Junior':'a small purple cartoon cat kid villain with big eyes, mischievous grin, tiny cape',
+    'Policán en Acción':'a cartoon dog-human hybrid police officer with floppy ears, police badge, heroic running pose, city background',
+    'Policán Superpoderoso':'a cartoon dog-human hybrid superhero in police uniform, leaping dramatically over rooftops, heroic expression',
+    'Policán Legendario':'a glowing golden cartoon dog-human hybrid police hero, legendary aura, confetti explosion, city cheering',
+    'Policán y el Jefe Unidos':'a cartoon dog-hero and a grumpy police chief standing back to back, ready for action, confident poses',
+    // HUNTRIX
+    'Zoe':'a short petite young Asian woman with big eyes, dark hair, conflicted expression, dark fantasy armor with purple accents',
+    'Baby Saja':'a very young teenage boy in stylish K-pop outfit, innocent face, soft features, ethereal dark glow',
+    'Mira':'a tall elegant young Asian woman with long dark hair, powerful pose, dark fantasy warrior outfit',
+    'Romance Saja':'a handsome young Asian man with soft features, charming smile, stylish dark K-pop outfit, charismatic aura',
+    'Soy':'a calm composed young Asian woman with short hair, serene battle expression, dark armor, fighting stance',
+    'Mystery Saja':'a mysterious young Asian man with dark hair covering one eye, enigmatic expression, dramatic shadow lighting',
+    'Abby Saja':'an athletic muscular young Asian man with intense eyes, dynamic action pose, dark stylish outfit',
+    'Jinu Saja':'a tall commanding young Asian man with sharp features, dark regal outfit, glowing supernatural eyes, leader aura',
+    'Seraphina la Caída':'a woman with torn dark wings, white hair, glowing violet eyes, half angel half demon aesthetic, dramatic pose',
+    'Rumy':'a young Asian woman with long dark hair, microphone in hand, battle dancer pose, K-pop star meets demon hunter',
+    'Las Guerreras Unidas':'four young Asian women warriors in dark fantasy K-pop outfits standing in a powerful group formation',
+    // PRINCESAS
+    'Cenicienta':'a elegant young woman in a blue ballgown with golden details, blonde hair up, glass slipper visible, magical sparkles',
+    'Aurora':'a beautiful young woman with long wavy blonde hair, pink and blue dress, sleeping beauty dreamlike soft lighting',
+    'Ariel':'a young woman with long flowing red hair underwater, green mermaid tail, wide curious blue eyes, coral reef background',
+    'Rapunzel':'a young woman with extremely long blonde hair wrapped around her, big green eyes, purple dress, glowing lanterns background',
+    'Tiana':'a young Black woman with dark hair, green lily pad dress, warm smile, New Orleans bayou background with fireflies',
+    'Bella':'a young woman with brown hair in a half-updo, golden ballgown, intelligent warm eyes, enchanted library background',
+    'Mérida':'a young Scottish woman with wild curly red hair, green medieval dress, holding a bow and arrow, highland misty background',
+    'Moana':'a young Polynesian woman with long wavy dark hair, red and white island dress, ocean waves behind her, confident pose',
+    'Elsa':'a young woman with long platinum blonde braid, ice blue dress with snowflake details, hands creating ice magic, frozen palace',
+    'Mulan':'a young Chinese woman in red and gold warrior armor, black hair, sword in hand, Great Wall of China background',
+    'Vaiana':'a young Polynesian woman with long wavy dark hair, red and white dress, heart-shaped green stone necklace, glowing ocean',
+    'Las Princesas Unidas':'a group of diverse princess characters in their iconic outfits, standing together in a magical glowing composition'
+  };
+
+  const visualDesc=cardVisuals[card.name]||'a heroic fantasy character in dynamic battle pose, dramatic lighting';
+  const geminiPrompt=`Collectible trading card art illustration. ${visualDesc}. Style: ${frameStyle}, dramatic cinematic lighting, dark rich background, highly detailed digital painting, vibrant colors, character in foreground, no text, no letters, no words, square format 1:1.`;
 
   area.innerHTML=`
     <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 0 16px">
