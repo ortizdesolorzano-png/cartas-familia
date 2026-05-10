@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="100" fill="#0a0a0f"/>
+<rect x="10" y="10" width="492" height="492" rx="90" fill="none" stroke="#c030e8" stroke-width="4"/>
+<rect x="5" y="5" width="502" height="200" rx="95" fill="rgba(200,60,255,0.06)"/>
+<circle cx="80" cy="90" r="5" fill="#ffd84a" opacity="0.8"/>
+<circle cx="435" cy="70" r="4" fill="#ffd84a" opacity="0.6"/>
+<circle cx="400" cy="150" r="3" fill="#fff" opacity="0.4"/>
+<circle cx="110" cy="175" r="3" fill="#fff" opacity="0.3"/>
+<circle cx="470" cy="200" r="5" fill="#c030e8" opacity="0.7"/>
+<g transform="translate(256,145)">
+<polygon points="0,-55 13,-20 50,-20 22,5 33,45 0,25 -33,45 -22,5 -50,-20 -13,-20" fill="#ffd84a" opacity="0.95"/>
+<polygon points="0,-35 8,-12 30,-12 15,3 20,28 0,16 -20,28 -15,3 -30,-12 -8,-12" fill="#fff" opacity="0.5"/>
+</g>
+<rect x="76" y="230" width="154" height="210" rx="20" fill="#120020" stroke="#c030e8" stroke-width="4"/>
+<rect x="86" y="240" width="134" height="72" rx="12" fill="#1e0038"/>
+<circle cx="153" cy="276" r="22" fill="#d946ef" opacity="0.85"/>
+<rect x="86" y="322" width="134" height="8" rx="4" fill="#c030e8" opacity="0.5"/>
+<rect x="86" y="338" width="100" height="5" rx="2.5" fill="rgba(255,255,255,0.2)"/>
+<rect x="86" y="351" width="118" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
+<rect x="86" y="398" width="134" height="32" rx="8" fill="rgba(201,162,39,0.25)" stroke="#ffd84a" stroke-width="1.5"/>
+<text x="153" y="420" text-anchor="middle" font-size="16" fill="#ffe566" font-family="-apple-system,sans-serif" font-weight="700">PLATINO</text>
+<rect x="282" y="240" width="154" height="210" rx="20" fill="#001828" stroke="#22d3ee" stroke-width="4"/>
+<rect x="292" y="250" width="134" height="72" rx="12" fill="#002438"/>
+<circle cx="359" cy="286" r="22" fill="#22d3ee" opacity="0.85"/>
+<rect x="292" y="332" width="134" height="8" rx="4" fill="#22d3ee" opacity="0.5"/>
+<rect x="292" y="348" width="100" height="5" rx="2.5" fill="rgba(255,255,255,0.2)"/>
+<rect x="292" y="361" width="118" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
+<rect x="292" y="408" width="134" height="32" rx="8" fill="rgba(0,200,232,0.2)" stroke="#22d3ee" stroke-width="1.5"/>
+<text x="359" y="430" text-anchor="middle" font-size="16" fill="#90f0ff" font-family="-apple-system,sans-serif" font-weight="700">DIAMANTE</text>
+<text x="256" y="478" text-anchor="middle" font-size="28" fill="white" font-family="-apple-system,sans-serif" font-weight="700" letter-spacing="1">FAMILY MAGIC</text>
+<text x="256" y="500" text-anchor="middle" font-size="18" fill="rgba(200,100,255,0.9)" font-family="-apple-system,sans-serif" font-weight="600" letter-spacing="4">CARDS</text>
+</svg>

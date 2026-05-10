@@ -1,0 +1,13 @@
+{
+  "name": "Family Magic Cards",
+  "short_name": "Family Magic",
+  "description": "App de cartas coleccionables para Rafa, Guille y Carmen",
+  "start_url": "/cartas-familia/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
