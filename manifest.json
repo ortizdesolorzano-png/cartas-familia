@@ -1,6 +1,6 @@
 {
-  "name": "Family Magic Cards",
-  "short_name": "Family Magic",
+  "name": "Family Cards",
+  "short_name": "Family Cards",
   "description": "App de cartas coleccionables para Rafa, Guille y Carmen",
   "start_url": "/cartas-familia/",
   "display": "standalone",
